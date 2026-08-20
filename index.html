@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shifatek — Santé digitale et innovation pour l'Afrique de l'Ouest</title>
+<meta name="description" content="Shifatek conçoit des outils de santé digitale et des solutions technologiques innovantes pour l'Afrique de l'Ouest, pensés depuis le terrain sénégalais. APHIA Care et Ilmia." />
+<meta property="og:title" content="Shifatek — Santé digitale et innovation pour l'Afrique de l'Ouest" />
+<meta property="og:description" content="Des outils de santé digitale pensés depuis le terrain, pour l'Afrique de l'Ouest." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="fr_FR" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#222E50;
+    --navy-deep:#1B2540;
+    --navy-soft:#2C395F;
+    --coral:#FE5F00;
+    --teal:#00A6A6;
+    --mint:#10FFCB;
+    --offwhite:#FFFCFF;
+    --paper:#F5F3EE;
+    --graytext:#C9CDD6;
+    --line:rgba(255,255,255,.12);
+    --display:"Fraunces",Georgia,serif;
+    --body:"Switzer","Segoe UI",system-ui,sans-serif;
+    --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--navy);
+    color:var(--offwhite);
+    font-family:var(--body);
+    font-size:18px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  .eyebrow{
+    font-family:var(--body);
+    font-weight:600;
+    font-size:.72rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--coral);
+    display:inline-block;
+    margin-bottom:22px;
+  }
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:22px 0;
+    transition:background .4s ease,padding .4s ease,border-color .4s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(27,37,64,.85);
+    backdrop-filter:blur(12px);
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--display);font-weight:600;font-size:1.5rem;letter-spacing:-.02em}
+  .logo span{color:var(--coral)}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:.92rem;color:var(--graytext);transition:color .25s}
+  .nav-links a:hover{color:var(--offwhite)}
+  .nav-cta{
+    border:1px solid var(--coral);color:var(--coral)!important;
+    padding:9px 20px;border-radius:40px;font-weight:500;
+    transition:background .25s,color .25s;
+  }
+  .nav-cta:hover{background:var(--coral);color:var(--navy)!important}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0}
+  .burger span{width:26px;height:2px;background:var(--offwhite);transition:.3s}
+
+  /* ---------- Hero ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:140px 0 90px}
+  .hero-glow{
+    position:absolute;top:-10%;right:-5%;width:60vw;height:60vw;max-width:760px;max-height:760px;
+    background:radial-gradient(circle,rgba(0,166,166,.20),transparent 62%);
+    pointer-events:none;filter:blur(20px);
+  }
+  .hero-glow.two{top:auto;bottom:-20%;left:-10%;right:auto;
+    background:radial-gradient(circle,rgba(254,95,0,.14),transparent 60%);}
+  .hero h1{font-size:clamp(2.9rem,7vw,6rem);max-width:14ch}
+  .hero h1 em{font-style:normal;color:var(--mint)}
+  .hero p{
+    margin-top:32px;max-width:46ch;font-size:clamp(1.05rem,1.6vw,1.32rem);
+    color:var(--graytext);line-height:1.6;
+  }
+  .hero-actions{margin-top:44px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .btn-primary{
+    background:var(--coral);color:var(--navy);font-weight:600;font-size:1rem;
+    padding:15px 30px;border-radius:44px;transition:transform .2s,box-shadow .2s;
+    display:inline-block;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(254,95,0,.28)}
+  .btn-text{font-weight:500;color:var(--offwhite);display:inline-flex;align-items:center;gap:9px}
+  .btn-text .arrow{transition:transform .25s}
+  .btn-text:hover .arrow{transform:translateX(5px)}
+  .btn-text::after{content:"";display:block;height:1px;background:var(--coral);
+    width:0;position:absolute;margin-top:26px;transition:width .3s}
+
+  /* ---------- Section rhythm ---------- */
+  section{position:relative}
+  .band{padding:110px 0}
+  .band.light{background:var(--paper);color:var(--navy)}
+  .band.light .eyebrow{color:var(--coral)}
+  .band.light h2{color:var(--navy)}
+  .section-head{max-width:42ch;margin-bottom:64px}
+  .section-head h2{font-size:clamp(2rem,4vw,3.15rem);margin-top:4px}
+  .section-head p{margin-top:20px;color:var(--graytext);font-size:1.1rem}
+  .band.light .section-head p{color:#55617A}
+
+  /* ---------- Mission split ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .split .visual{
+    aspect-ratio:4/5;border-radius:18px;position:relative;overflow:hidden;
+    background:linear-gradient(150deg,var(--navy-soft),var(--navy-deep));
+    border:1px solid var(--line);
+  }
+  .split.light .visual{background:linear-gradient(150deg,#E9E5DC,#DED9CD);border-color:rgba(0,0,0,.06)}
+  .visual .mark{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);font-size:clamp(4rem,9vw,7rem);font-weight:600;
+  }
+  .visual .mark.coral{color:var(--coral)}
+  .visual .mark.mint{color:var(--mint)}
+  .visual .mark.teal{color:var(--teal)}
+  .split h3{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:22px}
+  .split p+p{margin-top:16px}
+  .split .lead{color:var(--graytext)}
+  .band.light .split .lead{color:#55617A}
+
+  /* ---------- Products ---------- */
+  .products{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:760px;margin:0 auto}
+  .card{
+    background:var(--navy-soft);border:1px solid var(--line);border-radius:18px;
+    padding:38px 32px 34px;transition:transform .3s,border-color .3s;
+    display:flex;flex-direction:column;min-height:340px;
+  }
+  .card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.28)}
+  .card .tag{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:20px}
+  .card.aphia .tag{color:var(--coral)}
+  .card.ilmia .tag{color:var(--mint)}
+  .card.form .tag{color:var(--teal)}
+  .card h3{font-size:1.9rem;margin-bottom:14px}
+  .card p{color:var(--graytext);font-size:1rem;flex:1}
+  .card .status{margin-top:22px;font-size:.85rem;font-weight:500;color:var(--offwhite);
+    display:inline-flex;align-items:center;gap:8px}
+  .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+  .card.aphia .dot{background:var(--coral)}
+  .card.ilmia .dot{background:var(--mint)}
+  .card.form .dot{background:var(--teal)}
+
+  /* ---------- Values ---------- */
+  .values{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:10px}
+  .value{padding-top:26px;border-top:2px solid var(--coral)}
+  .value h4{font-family:var(--display);font-size:1.25rem;font-weight:600;margin-bottom:10px;color:var(--navy)}
+  .value p{font-size:.95rem;color:#55617A}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .contact-info h2{font-size:clamp(2rem,4vw,3rem);margin-top:4px;margin-bottom:24px}
+  .contact-info p{color:var(--graytext);max-width:38ch}
+  .contact-meta{margin-top:36px;display:flex;flex-direction:column;gap:14px}
+  .contact-meta a,.contact-meta span{color:var(--offwhite);font-size:1.05rem}
+  .contact-meta small{color:var(--teal);display:block;font-size:.72rem;letter-spacing:.14em;
+    text-transform:uppercase;margin-bottom:2px}
+  form{display:flex;flex-direction:column;gap:18px}
+  .field label{display:block;font-size:.82rem;color:var(--graytext);margin-bottom:7px}
+  .field input,.field textarea{
+    width:100%;background:var(--navy-soft);border:1px solid var(--line);border-radius:11px;
+    padding:14px 16px;color:var(--offwhite);font-family:var(--body);font-size:1rem;transition:border-color .25s;
+  }
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--coral)}
+  .field textarea{resize:vertical;min-height:120px}
+  form button{
+    background:var(--coral);color:var(--navy);font-weight:600;font-size:1rem;
+    padding:15px;border:0;border-radius:44px;cursor:pointer;transition:transform .2s;margin-top:4px;
+  }
+  form button:hover{transform:translateY(-2px)}
+  .form-note{font-size:.85rem;color:var(--graytext);text-align:center}
+
+  /* ---------- Footer ---------- */
+  footer{padding:56px 0 40px;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  .foot .logo{font-size:1.3rem}
+  .foot-links{display:flex;gap:26px;font-size:.9rem}
+  .foot-links a{color:var(--graytext);transition:color .2s}
+  .foot-links a:hover{color:var(--offwhite)}
+  .foot small{color:var(--graytext);font-size:.82rem;width:100%;text-align:center;margin-top:26px}
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:860px){
+    .nav-links{
+      position:fixed;inset:0 0 0 auto;width:78%;max-width:320px;background:var(--navy-deep);
+      flex-direction:column;justify-content:center;gap:30px;padding:40px;
+      transform:translateX(100%);transition:transform .35s ease;border-left:1px solid var(--line);
+    }
+    .nav-links.open{transform:none}
+    .nav-links a{font-size:1.15rem}
+    .burger{display:flex;z-index:120}
+    .split,.contact-grid{grid-template-columns:1fr;gap:40px}
+    .split .visual{aspect-ratio:16/10;order:-1}
+    .products{grid-template-columns:1fr}
+    .values{grid-template-columns:1fr 1fr}
+    .band{padding:80px 0}
+    .hero{padding:120px 0 70px}
+  }
+  @media(max-width:480px){
+    .wrap{padding:0 22px}
+    .values{grid-template-columns:1fr}
+    .foot{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo">Shifa<span>tek</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#mission">Mission</a>
+      <a href="#aphia">APHIA Care</a>
+      <a href="#ilmia">Ilmia</a>
+      <a href="#contact" class="nav-cta">Nous contacter</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow two"></div>
+    <div class="wrap">
+      <span class="eyebrow reveal">Santé digitale · Afrique de l'Ouest</span>
+      <h1 class="reveal">La technologie de santé, pensée <em>depuis le terrain</em>.</h1>
+      <p class="reveal">Shifatek conçoit des outils de santé digitale et des solutions innovantes pour l'Afrique de l'Ouest — en partant des besoins réels des pharmacies, des soignants et des étudiants, plutôt que de solutions importées.</p>
+      <div class="hero-actions reveal">
+        <a href="#mission" class="btn-primary">Découvrir notre mission</a>
+        <a href="#contact" class="btn-text" style="position:relative">Nous contacter <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="band" id="mission">
+    <div class="wrap">
+      <div class="split">
+        <div class="content reveal">
+          <span class="eyebrow">Notre conviction</span>
+          <h3>Partir des besoins réels, pas importer des solutions toutes faites.</h3>
+          <p class="lead">Trop d'outils numériques de santé sont pensés ailleurs, pour des contextes qui ne sont pas les nôtres : connexion permanente supposée, réalités réglementaires différentes, usages éloignés du terrain.</p>
+          <p class="lead">Chez Shifatek, chaque produit naît d'un problème observé directement au Sénégal — dans une pharmacie, une faculté de médecine, une entreprise — et se construit avec les personnes concernées. C'est ce qui rend nos outils réellement utiles, et adoptés.</p>
+        </div>
+        <div class="visual reveal"><div class="mark teal">◍</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="band" id="produits" style="background:var(--navy-deep)">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Nos solutions</span>
+        <h2>Une mission, des expressions concrètes.</h2>
+        <p>Chaque produit Shifatek répond à un besoin observé sur le terrain de la santé en Afrique de l'Ouest.</p>
+      </div>
+      <div class="products">
+        <div class="card aphia reveal" id="aphia">
+          <span class="tag">Santé digitale · en production</span>
+          <h3>APHIA Care</h3>
+          <p>L'ERP qui digitalise la gestion des pharmacies sénégalaises : stock, ventes, réception. Conçu offline-first, il fonctionne même sans connexion stable et se synchronise dès le retour du réseau.</p>
+          <span class="status"><span class="dot"></span>Déployé et en commercialisation</span>
+        </div>
+        <div class="card ilmia reveal" id="ilmia">
+          <span class="tag">Apprentissage · en construction</span>
+          <h3>Ilmia</h3>
+          <p>Un assistant qui forme les étudiants et professionnels de santé par le jeu : des scénarios cliniques interactifs, guidés par l'IA, ancrés dans les pathologies du contexte ouest-africain.</p>
+          <span class="status"><span class="dot"></span>En conception</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / VALUES -->
+  <section class="band light" id="apropos">
+    <div class="wrap">
+      <div class="split light">
+        <div class="visual reveal"><div class="mark coral">S</div></div>
+        <div class="content reveal">
+          <span class="eyebrow">L'équipe</span>
+          <h3>Une équipe entre la tech, la santé et le terrain sénégalais.</h3>
+          <p class="lead">Basée à Dakar, Shifatek réunit une expertise technique réelle — data science, développement, IA — et une connaissance intime des réalités de la santé en Afrique de l'Ouest.</p>
+          <p class="lead">Nous construisons avec une exigence : chaque outil doit fonctionner dans le monde réel, pas seulement en démonstration.</p>
+        </div>
+      </div>
+      <div class="values" style="margin-top:70px">
+        <div class="value reveal"><h4>Rigueur</h4><p>Des produits testés dans les conditions réelles du terrain, pas seulement en théorie.</p></div>
+        <div class="value reveal"><h4>Accessibilité</h4><p>Des outils pensés pour une connectivité variable et des usages concrets.</p></div>
+        <div class="value reveal"><h4>Impact local</h4><p>Des solutions qui répondent aux besoins de l'Afrique de l'Ouest, depuis l'Afrique de l'Ouest.</p></div>
+        <div class="value reveal"><h4>Innovation</h4><p>L'IA et le digital mis au service de la santé et de la formation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="band" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <span class="eyebrow">Parlons-en</span>
+          <h2>Construisons la santé digitale de demain, ensemble.</h2>
+          <p>Un projet, un partenariat, une formation pour vos équipes ? Écrivez-nous, nous vous répondrons rapidement.</p>
+          <div class="contact-meta">
+            <div><small>Basés à</small><span>Dakar, Sénégal</span></div>
+            <div><small>E-mail</small><a href="mailto:contact@shifatek.com">contact@shifatek.com</a></div>
+          </div>
+        </div>
+        <form class="reveal" id="contactForm" onsubmit="return handleSubmit(event)">
+          <div class="field"><label for="name">Nom</label><input id="name" name="name" type="text" required /></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required /></div>
+          <div class="field"><label for="company">Entreprise <span style="opacity:.5">(facultatif)</span></label><input id="company" name="company" type="text" /></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+          <button type="submit">Envoyer le message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="logo">Shifa<span style="color:var(--coral)">tek</span></a>
+    <div class="foot-links">
+      <a href="#mission">Mission</a>
+      <a href="#aphia">APHIA Care</a>
+      <a href="#ilmia">Ilmia</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <small>© 2026 Shifatek — Dakar, Sénégal. Tous droits réservés.</small>
+  </div>
+</footer>
+
+<script>
+  // Header shadow on scroll
+  const header=document.getElementById('header');
+  addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30));
+
+  // Mobile menu
+  const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+  // Scroll reveal
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay=(i%3*80)+'ms';
+    io.observe(el);
+  });
+
+  // Contact form (front-end only; wire to a real endpoint later)
+  function handleSubmit(e){
+    e.preventDefault();
+    const note=document.getElementById('formNote');
+    note.style.color='var(--mint)';
+    note.textContent='Merci ! Votre message est prêt — connectez le formulaire à votre e-mail pour l\'activer.';
+    return false;
+  }
+</script>
+</body>
+</html>
