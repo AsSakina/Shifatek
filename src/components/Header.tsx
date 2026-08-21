@@ -5,7 +5,7 @@ import { useActiveSection } from '../lib/useActiveSection'
 import { useScrollProgress } from '../lib/useScrollProgress'
 import { ThemeToggle } from './ThemeToggle'
 
-const SECTION_IDS = ['mission', 'produits', 'apropos', 'contact'] as const
+const SECTION_IDS = ['mission', 'produits', 'apropos', 'recherche', 'contact'] as const
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)

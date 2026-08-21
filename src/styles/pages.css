@@ -88,6 +88,7 @@
 /* ---------- Page produit ---------- */
 .product-page.accent-teal { --accent: var(--teal); --accent-ink: var(--teal-ink); }
 .product-page.accent-indigo { --accent: var(--indigo-ink); --accent-ink: var(--indigo-ink); }
+.product-page.accent-mint { --accent: var(--mint); --accent-ink: var(--mint-dark); }
 
 .product-page .eyebrow { color: var(--accent-ink); }
 .product-page .eyebrow svg { color: var(--accent); }

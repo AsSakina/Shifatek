@@ -1,9 +1,8 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Activity } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { hero } from '../content'
 import { AphiaMockup } from '../visuals/AphiaMockup'
 import { FloatingTiles } from '../visuals/FloatingTiles'
-import { NsoromaStar } from '../visuals/NsoromaStar'
 
 /** Décale l'entrée de chaque bloc du hero de 90 ms. */
 const step = (i: number) => ({ '--i': i }) as CSSProperties
@@ -19,7 +18,7 @@ export function Hero() {
       <div className="wrap hero-inner">
         <div className="hero-copy">
           <span className="hero-badge rise" style={step(0)}>
-            <NsoromaStar size={13} />
+            <Activity size={13} />
             {hero.eyebrow}
           </span>
           {/* Le <br> ne s'applique qu'au-delà de 860px : deux lignes exactement. */}

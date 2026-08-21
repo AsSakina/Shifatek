@@ -1,4 +1,4 @@
-import { NsoromaStar } from './NsoromaStar'
+import { Sparkles } from 'lucide-react'
 
 /**
  * Maquette d'Ilmia : un cas clinique en cours, la bonne réponse s'allume
@@ -10,7 +10,7 @@ export function IlmiaMockup() {
       <div className="mock-bar">
         <span className="mock-name">Cas clinique</span>
         <span className="spacer" />
-        <span className="ia-badge" aria-hidden="true"><NsoromaStar size={11} />IA</span>
+        <span className="ia-badge" aria-hidden="true"><Sparkles size={11} />IA</span>
       </div>
       <div className="mock-quiz" aria-hidden="true">
         <div className="skeleton" />

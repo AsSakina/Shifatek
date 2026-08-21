@@ -1,10 +1,9 @@
-import { NsoromaStar } from './NsoromaStar'
-
 /**
- * Composition décorative : anneaux concentriques + étoile Nsoromma au centre.
- * Remplace les anciennes vignettes « ◍ » et « S ».
+ * Composition décorative : anneaux concentriques, purement abstraite.
+ * Pas de lettre ni de symbole au centre — ni l'étoile Nsoromma (identité
+ * d'APHIA, cf. Roadmap), ni une initiale : juste le motif.
  */
-export function OrbitMark({ letter }: { letter?: string }) {
+export function OrbitMark() {
   return (
     <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false" className="drift">
       <g fill="none" stroke="currentColor" strokeOpacity="0.35">
@@ -22,24 +21,7 @@ export function OrbitMark({ letter }: { letter?: string }) {
           fillOpacity="0.5"
         />
       ))}
-      {letter ? (
-        <text
-          x="100"
-          y="100"
-          textAnchor="middle"
-          dominantBaseline="central"
-          fill="currentColor"
-          fontFamily="Fraunces, Georgia, serif"
-          fontSize="86"
-          fontWeight="600"
-        >
-          {letter}
-        </text>
-      ) : (
-        <g transform="translate(64 64) scale(0.72)">
-          <NsoromaStar size={100} />
-        </g>
-      )}
+      <circle cx="100" cy="100" r="5" fill="currentColor" fillOpacity="0.4" />
     </svg>
   )
 }

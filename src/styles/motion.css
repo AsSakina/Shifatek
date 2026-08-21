@@ -62,6 +62,8 @@
 
   .tile,
   .drift,
+  .hero-dots,
+  .hero-glow,
   .sync-pill span,
   .answer.correct,
   .progress i { animation: none; }
@@ -75,6 +77,7 @@
   .btn-primary,
   .btn-secondary,
   .product-card,
+  .research-card,
   .theme-toggle,
   .chatbot-toggle,
   .chatbot-chip,

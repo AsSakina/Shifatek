@@ -109,8 +109,8 @@
 
 .nav-cta {
   padding: 10px 20px;
-  border-radius: var(--r-action);
-  background: var(--mint);
+  border-radius: var(--r-pill);
+  background: linear-gradient(135deg, var(--mint), var(--mint-dark));
   color: var(--navy) !important;
   font-weight: 600;
   transition: background 0.2s var(--ease), transform 0.2s var(--ease);
