@@ -5,7 +5,7 @@ export const nav = [
   { label: 'Mission', href: '/#mission' },
   { label: 'APHIA Care', href: '/aphia' },
   { label: 'Ilmia', href: '/ilmia' },
-  { label: 'Recherche', href: '/#recherche' },
+  { label: 'Formations', href: '/formations' },
 ] as const
 
 export const navCta = 'Nous contacter'
@@ -102,7 +102,7 @@ export const productPages = {
     accent: 'teal',
     cta: 'Ouvrir aphia.care',
     ctaHref: 'https://aphia.care',
-    secondary: 'Book a demo',
+    secondary: 'Réserver une démo',
     secondaryHref: '#contact',
     features: [
       'Stocks par lot, expiration et emplacement',
@@ -119,14 +119,31 @@ export const productPages = {
     intro: 'Ilmia transforme le cours de médecine en cas à résoudre : simulation de patients, tournois entre facultés et tutorat adaptatif, construits avec des experts et ancrés dans les pathologies ouest-africaines.',
     accent: 'indigo',
     cta: 'Découvrir Ilmia',
-    ctaHref: 'https://contact.shifatek.com',
+    ctaHref: '/#contact',
     secondary: 'Rejoindre la cohorte pilote',
-    secondaryHref: 'https://contact.shifatek.com',
+    secondaryHref: '/#contact',
     features: [
       'Studio de contenus jouables validés par des experts',
       'Arena : ligues et tournois inter-facultés',
       'Patient : simulation conversationnelle',
       'Coach : tutorat adaptatif et répétition espacée',
+    ],
+  },
+  formations: {
+    name: 'Formations',
+    kicker: 'Formation data & IA',
+    title: 'Apprendre la donnée et l’IA, sans jargon inutile.',
+    intro: 'Dans l’esprit des ateliers menés avec Gomycode, Shifatek forme équipes, dirigeants et particuliers aux fondamentaux de la donnée et de l’intelligence artificielle — des sessions concrètes, pensées pour des débutants, ancrées dans des cas réels plutôt que dans la théorie.',
+    accent: 'mint',
+    cta: 'Réserver une session',
+    ctaHref: '/#contact',
+    secondary: 'Être informé des prochaines sessions',
+    secondaryHref: '/#contact',
+    features: [
+      'Fondamentaux de la donnée : collecte, structuration, visualisation',
+      'Introduction pratique au machine learning et à l’IA générative',
+      'Ateliers sur cas réels, pensés pour les débutants',
+      'Formats courts, en présentiel ou à distance',
     ],
   },
 } as const
