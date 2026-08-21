@@ -180,3 +180,15 @@ section[id] { scroll-margin-top: calc(var(--header-h) + var(--sp-lg)); }
 
 .section-head { max-width: 46ch; }
 .section-head h2 { margin-bottom: var(--sp-md); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

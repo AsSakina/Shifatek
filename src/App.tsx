@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { productPages, type ProductId } from './content'
 import { Capabilities } from './components/Capabilities'
+import { Chatbot } from './components/Chatbot'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
@@ -41,6 +42,7 @@ export function App() {
       <Header />
       {route ? <ProductPage id={route} /> : <Home />}
       <Footer />
+      <Chatbot />
     </>
   )
 }
