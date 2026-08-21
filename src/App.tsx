@@ -41,6 +41,9 @@ export function App() {
   useEffect(() => {
     document.title = route ? productTitle(content, route) : content.meta.title
     document.querySelector('meta[name="description"]')?.setAttribute('content', content.meta.description)
+    const url = `https://www.shifatek.com${route ? `/${route}` : '/'}`
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', url)
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', url)
   }, [route, content])
 
   return (
