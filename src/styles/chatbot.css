@@ -130,12 +130,15 @@
 .chatbot-reset { opacity: 0.75; }
 
 @media (max-width: 860px) {
-  .chatbot-toggle { right: var(--page-margin); bottom: var(--page-margin); }
+  /* Plus petit qu'en desktop : réduit la zone où le bouton flottant peut
+     chevaucher un badge ou un bouton du contenu qui défile derrière lui. */
+  .chatbot-toggle { right: var(--page-margin); bottom: var(--page-margin); width: 48px; height: 48px; }
+  .chatbot-toggle svg { width: 21px; height: 21px; }
 
   .chatbot-panel {
     right: var(--page-margin);
     left: var(--page-margin);
     width: auto;
-    bottom: calc(var(--page-margin) + 56px + var(--sp-sm));
+    bottom: calc(var(--page-margin) + 48px + var(--sp-sm));
   }
 }

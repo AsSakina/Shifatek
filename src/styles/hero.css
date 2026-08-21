@@ -200,4 +200,8 @@
 
 @media (max-width: 860px) {
   .floating-tiles { display: none; }
+
+  /* Sans ça, le bouton flottant du chatbot recouvre le badge de statut
+     de la dernière ligne de la maquette à la position de scroll naturelle. */
+  .hero-stage { margin-bottom: 72px; }
 }
