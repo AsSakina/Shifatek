@@ -1,0 +1,367 @@
+/* ---------- Notre conviction : bandeau déclaration ---------- */
+.statement {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: #c9d2ee;
+}
+
+.statement h2 {
+  max-width: 20ch;
+  color: #ffffff;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+}
+
+.statement .eyebrow { color: #7fe9d8; }
+.statement .eyebrow svg { color: var(--mint); }
+.statement .section-label .num { color: rgba(255, 255, 255, 0.55); }
+.statement .section-label .rule { background: rgba(255, 255, 255, 0.18); }
+
+/* Filigrane : l'étoile Nsoromma déborde du bord droit. */
+.statement-mark {
+  position: absolute;
+  top: 50%;
+  right: -6%;
+  width: min(46%, 460px);
+  translate: 0 -50%;
+  color: var(--mint);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.statement-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 64px);
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: clamp(28px, 3vw, 40px);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.statement-cols p {
+  color: #c9d2ee;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 860px) {
+  .statement-cols { grid-template-columns: 1fr; }
+  .statement-mark { display: none; }
+}
+
+/* ---------- Produits : deux cartes juxtaposées ---------- */
+.products-head {
+  max-width: 52ch;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+
+.products-head p { margin-top: var(--sp-md); }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-lg);
+  align-items: stretch;
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(24px, 2.6vw, 34px) clamp(24px, 2.6vw, 34px) 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+  scroll-margin-top: calc(var(--header-h) + var(--sp-lg));
+  transition:
+    color 0.35s var(--ease-wipe),
+    border-color 0.35s var(--ease-wipe),
+    box-shadow 0.35s var(--ease),
+    transform 0.35s var(--ease);
+}
+
+.tag {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  background: var(--teal-10);
+  color: var(--teal-ink);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.35s var(--ease-wipe), color 0.35s var(--ease-wipe);
+}
+
+.product-card.ilmia .tag {
+  background: var(--indigo-10);
+  color: var(--indigo-ink);
+}
+
+.product-card h3 { margin: var(--sp-md) 0 var(--sp-sm); }
+.product-card p { font-size: var(--fs-body-md); }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--sp-md);
+  color: var(--ink-strong);
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  transition: color 0.35s var(--ease-wipe);
+}
+
+.status i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 0 4px var(--teal-10);
+}
+
+.product-card.ilmia .status i {
+  background: var(--indigo-ink);
+  box-shadow: 0 0 0 4px var(--indigo-10);
+}
+
+/* Aperçu : les écrans dépassent du bas de la carte, en couches.
+   Ils sont dessinés plus larges puis réduits (--s) pour garder une mise en
+   page confortable à l'intérieur de la maquette. */
+.product-preview {
+  --s: 0.78;
+  position: relative;
+  /* Volontairement plus court que les écrans : ils sont rognés par le bord
+     de la carte, ce qui suggère la suite de l'interface. */
+  height: 205px;
+  margin-top: clamp(24px, 3vw, 36px);
+}
+
+.product-preview .layer {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: calc(100% / var(--s));
+  transform-origin: top left;
+  transform: scale(var(--s));
+  transition: transform 0.45s var(--ease);
+}
+
+/* Écran secondaire, décalé derrière le principal. */
+.product-preview .behind {
+  opacity: 0.6;
+  transform: scale(calc(var(--s) * 0.97)) translate(34px, -18px);
+}
+
+.product-card:hover .layer.front { transform: scale(var(--s)) translateY(-16px); }
+
+.product-card:hover .layer.behind {
+  transform: scale(calc(var(--s) * 0.97)) translate(34px, -34px);
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: transparent;
+}
+
+/* Remplissage au survol : la carte prend la couleur du produit. */
+.product-card.aphia { --fill: var(--fill-3); --fill-ink: var(--fill-3-ink); }
+.product-card.ilmia { --fill: var(--fill-5); --fill-ink: var(--fill-5-ink); }
+
+@media (hover: hover) {
+  .product-card:hover .tag,
+  .product-card:focus-within .tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--fill-ink);
+  }
+
+  .product-card:hover .status,
+  .product-card:focus-within .status { color: var(--fill-ink); }
+
+  .product-card:hover .status i,
+  .product-card:focus-within .status i {
+    background: var(--fill-ink);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18);
+  }
+}
+
+/* ---------- Contact : bandeau coral pleine largeur ---------- */
+.contact-section {
+  background: var(--contact-bg);
+  color: var(--contact-ink);
+}
+
+.contact-section h2 { color: var(--contact-ink); }
+.contact-section .eyebrow,
+.contact-section .section-label .num { color: var(--contact-ink); }
+.contact-section .eyebrow svg { color: var(--contact-ink); opacity: 0.75; }
+.contact-section .section-label .rule { background: rgba(255, 255, 255, 0.28); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: clamp(40px, 6vw, 96px);
+}
+
+.contact-info h2 { max-width: 16ch; margin-bottom: var(--sp-md); }
+.contact-info > p { max-width: 42ch; color: var(--contact-ink-soft); font-size: 1.05rem; }
+
+.contact-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  margin-top: var(--sp-xl);
+}
+
+.contact-meta small {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--contact-ink-soft);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.contact-meta span,
+.contact-meta a { color: var(--contact-ink); font-size: var(--fs-body-md); font-weight: 600; }
+.contact-meta a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Champs soulignés : pas de boîte, juste un filet qui s'affirme au focus. */
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.contact-form .field label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--contact-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--contact-line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--contact-ink);
+  font: var(--fs-body-md) var(--body);
+  transition: border-color 0.2s var(--ease);
+}
+
+.contact-form textarea { min-height: 90px; resize: vertical; }
+
+.contact-form input:hover,
+.contact-form textarea:hover { border-color: var(--contact-ink); }
+
+/* L'outline est conservé (la référence le supprimait) : navigation clavier. */
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  border-color: var(--contact-ink);
+  outline: 2px solid var(--contact-ink);
+  outline-offset: 4px;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--sp-xs);
+  padding: 14px 24px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--contact-btn-bg);
+  color: var(--contact-btn-ink);
+  font: 700 var(--fs-body-md) var(--body);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.btn-submit svg { width: 16px; height: 16px; }
+.btn-submit:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18); }
+.btn-submit:active:not(:disabled) { transform: scale(0.98); }
+.btn-submit:disabled { opacity: 0.6; cursor: progress; }
+
+/* Champ piège anti-robots : hors écran, jamais focusable au clavier. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 24px;
+  color: var(--contact-ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.form-note svg { width: 15px; height: 15px; }
+.form-note.is-error { color: var(--contact-ink); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Pied de page ---------- */
+.site-footer {
+  padding: clamp(40px, 5vw, 64px) 0 var(--sp-xl);
+  border-top: 1px solid var(--border);
+  background: var(--surface-container-low);
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-lg);
+}
+
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-lg);
+  font-size: var(--fs-body-sm);
+}
+
+.foot-links a:hover { color: var(--teal-ink); }
+
+.foot small {
+  width: 100%;
+  margin-top: var(--sp-lg);
+  color: var(--on-surface-variant);
+  font-size: var(--fs-body-sm);
+  text-align: center;
+}
+
+/* ---------- Adaptations ---------- */
+@media (max-width: 860px) {
+  .split,
+  .contact-grid,
+  .product-grid { grid-template-columns: 1fr; }
+
+  .split .visual { order: -1; aspect-ratio: 16 / 10; }
+  .product-preview { height: 220px; }
+}
+
+@media (max-width: 560px) {
+  .foot { flex-direction: column; align-items: flex-start; }
+  .product-preview { height: 190px; }
+  .product-preview .mock.behind { display: none; }
+}

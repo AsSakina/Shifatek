@@ -1,0 +1,46 @@
+import { useEffect } from 'react'
+import { productPages, type ProductId } from './content'
+import { Capabilities } from './components/Capabilities'
+import { Contact } from './components/Contact'
+import { Footer } from './components/Footer'
+import { Header } from './components/Header'
+import { Hero } from './components/Hero'
+import { Mission } from './components/Mission'
+import { ProductPage, productTitle } from './components/ProductPage'
+import { Products } from './components/Products'
+import { Values } from './components/Values'
+
+/** Routage minimal sur le chemin : /aphia, /ilmia, sinon l'accueil. */
+function currentRoute(): ProductId | null {
+  const path = window.location.pathname.replace(/\/$/, '')
+  return path === '/aphia' ? 'aphia' : path === '/ilmia' ? 'ilmia' : null
+}
+
+function Home() {
+  return (
+    <main id="top">
+      <Hero />
+      <Mission />
+      <Products />
+      <Capabilities features={productPages.aphia.features} index={3} />
+      <Values />
+      <Contact index={5} />
+    </main>
+  )
+}
+
+export function App() {
+  const route = currentRoute()
+
+  useEffect(() => {
+    document.title = route ? productTitle(route) : 'Shifatek — Santé digitale et innovation'
+  }, [route])
+
+  return (
+    <>
+      <Header />
+      {route ? <ProductPage id={route} /> : <Home />}
+      <Footer />
+    </>
+  )
+}

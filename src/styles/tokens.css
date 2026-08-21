@@ -1,0 +1,186 @@
+/* Jetons du design system Shifatek — voir design.md.
+   Thème clair « light clinical » par défaut, thème sombre en surcharge.
+   Les couleurs de marque (menthe, teal, coral, navy) ne changent jamais :
+   seuls les jetons sémantiques (surfaces, encres, bordures) basculent. */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --surface: #fbf8fb;
+  --surface-dim: #dcd9dc;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f5f3f6;
+  --surface-container: #f0edf0;
+  --surface-container-high: #eae7ea;
+  --surface-container-highest: #e4e2e5;
+  --card: #ffffff;
+  --border: #dfdfdf;
+  --hairline: rgba(34, 46, 80, 0.12);
+
+  /* Encres */
+  --ink-strong: #222e50;          /* titres, chiffres, libellés forts */
+  --ink: #45464e;                 /* corps de texte */
+  --ink-muted: #6c6d78;           /* légendes, mentions */
+  --on-surface: #1b1b1e;
+  --on-surface-variant: #45464e;
+  --outline: #76767f;
+  --outline-variant: #c6c6cf;
+
+  /* Marque — constantes dans les deux thèmes */
+  --navy: #222e50;
+  --navy-deep: #0c193a;
+  --mint: #10ffcb;
+  --mint-dark: #00e0b2;
+  --teal: #00a6a6;
+  --teal-ink: #00767a;            /* teal lisible en petit corps */
+  --coral: #fe5f00;
+  --coral-ink: #c94a00;           /* coral lisible en petit corps */
+  --indigo: #3a4669;              /* accent Ilmia (l'orange est réservé aux alertes) */
+  --indigo-ink: #3a4669;
+  --indigo-10: rgba(58, 70, 105, 0.1);
+  --alert-bg: #c94a00;            /* badge d'alerte : 4,7:1 avec du blanc */
+  --alert-ink: #ffffff;
+
+  /* Remplissages au survol (.wipe) — une paire fond/encre par valeur.
+     Toutes vérifiées ≥ 4,5:1. */
+  --fill-1: #222e50;  --fill-1-ink: #dbe1ff;
+  --fill-2: #10ffcb;  --fill-2-ink: #222e50;
+  --fill-3: #00767a;  --fill-3-ink: #ffffff;
+  --fill-4: #c94a00;  --fill-4-ink: #ffffff;
+  --fill-5: #3a4669;  --fill-5-ink: #dbe1ff;   /* Ilmia — indigo, remplace l'orange */
+
+  /* Teintes translucides */
+  --navy-10: rgba(34, 46, 80, 0.1);
+  --teal-10: rgba(0, 166, 166, 0.1);
+  --mint-18: rgba(16, 255, 203, 0.18);
+
+  /* Élévation */
+  --shadow-card: 0 8px 24px rgba(34, 46, 80, 0.08);
+  --shadow-hover: 0 14px 36px rgba(34, 46, 80, 0.12);
+  --shadow-modal: 0 16px 48px rgba(34, 46, 80, 0.12);
+
+  /* Bandeau contact (coral pleine largeur) */
+  --contact-bg: #bb440a;          /* 5,1:1 avec l'encre crème */
+  --contact-ink: #fffaf3;
+  --contact-ink-soft: rgba(255, 250, 243, 0.93);
+  --contact-line: rgba(255, 250, 243, 0.62);
+  --contact-btn-bg: #17213a;
+  --contact-btn-ink: #fffaf3;
+
+  /* Bandeau feuille de route (menthe) */
+  --roadmap-bg: #bfe8dc;
+  --roadmap-ink: #17213a;
+  --roadmap-ink-soft: rgba(23, 33, 58, 0.72);
+  --roadmap-line: rgba(23, 33, 58, 0.25);
+  --roadmap-num: #006265;       /* 5,4:1 sur la menthe */
+
+  /* Ambiances du hero */
+  --glow-mint: rgba(16, 255, 203, 0.28);
+  --glow-teal: rgba(0, 166, 166, 0.18);
+  --dot: var(--outline-variant);
+  --grain-opacity: 0.035;
+
+  /* Rayons */
+  --r-micro: 4px;
+  --r-action: 10px;
+  --r-card: 16px;
+  --r-pill: 9999px;
+
+  /* Espacements — grille 8px */
+  --sp-xs: 4px;
+  --sp-sm: 12px;
+  --sp-md: 16px;
+  --sp-lg: 24px;
+  --sp-xl: 40px;
+  --gutter: 24px;
+  --container: 1180px;
+  --page-margin: 32px;
+  --header-h: 76px;
+
+  /* Typographie */
+  --display: 'Manrope', system-ui, sans-serif;
+  --body: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  --fs-display: clamp(2.4rem, 5.1vw, 4rem);
+  --fs-headline-lg: clamp(1.8rem, 3.4vw, 2.7rem);
+  --fs-headline-md: clamp(1.35rem, 2vw, 1.6rem);
+  --fs-headline-sm: 1.2rem;
+  --fs-body-lg: 1.125rem;
+  --fs-body-md: 1rem;
+  --fs-body-sm: 0.875rem;
+  --fs-label: 0.75rem;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-wipe: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ---------------- Thème sombre ----------------
+   Base navy profonde héritée de la marque ; les accents restent identiques,
+   seules leur luminosité perçue et les ombres changent. */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --surface: #0d1426;
+  --surface-dim: #080e1c;
+  --surface-container-lowest: #111a30;
+  --surface-container-low: #131d35;
+  --surface-container: #18233e;
+  --surface-container-high: #1d2a49;
+  --surface-container-highest: #233255;
+  --card: #131d35;
+  --border: rgba(255, 255, 255, 0.09);
+  --hairline: rgba(255, 255, 255, 0.1);
+
+  --ink-strong: #f1f5ff;
+  --ink: #b4bdd4;
+  --ink-muted: #8a94ad;
+  --on-surface: #f1f5ff;
+  --on-surface-variant: #b4bdd4;
+  --outline: #7e88a3;
+  --outline-variant: #2e3a58;
+
+  /* Sur fond sombre, les accents peuvent redevenir vifs. */
+  --teal-ink: #35d6d6;
+  --coral-ink: #ff8a3d;
+  --indigo-ink: #b9c5f0;
+  --indigo-10: rgba(185, 197, 240, 0.14);
+  --alert-bg: #ff8a3d;            /* fond clair : encre sombre par-dessus */
+  --alert-ink: #14203a;
+
+  /* Sur fond sombre les remplissages s'éclaircissent (jetons « fixed »
+     de design.md) et l'encre passe en sombre. */
+  --fill-1: #b9c5f0;  --fill-1-ink: #0d1a3b;
+  --fill-2: #27ffcc;  --fill-2-ink: #002117;
+  --fill-3: #5bd9d8;  --fill-3-ink: #002020;
+  --fill-4: #ff8a3d;  --fill-4-ink: #14203a;
+  --fill-5: #b9c5f0;  --fill-5-ink: #0d1a3b;
+
+  --navy-10: rgba(255, 255, 255, 0.07);
+  --teal-10: rgba(53, 214, 214, 0.14);
+  --mint-18: rgba(16, 255, 203, 0.16);
+
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.5);
+  --shadow-modal: 0 16px 48px rgba(0, 0, 0, 0.55);
+
+  --contact-bg: #93340a;
+  --contact-btn-bg: #0d1426;
+  --roadmap-bg: #16463f;
+  --roadmap-ink: #e8fff8;
+  --roadmap-ink-soft: rgba(232, 255, 248, 0.78);
+  --roadmap-line: rgba(232, 255, 248, 0.22);
+  --roadmap-num: #5bd9d8;
+
+  --glow-mint: rgba(16, 255, 203, 0.16);
+  --glow-teal: rgba(0, 166, 166, 0.22);
+  --dot: rgba(255, 255, 255, 0.12);
+  --grain-opacity: 0.05;
+}
+
+@media (max-width: 860px) {
+  :root {
+    --page-margin: 16px;
+    --header-h: 68px;
+  }
+}

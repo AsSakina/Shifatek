@@ -1,0 +1,171 @@
+/* ---------------------------------------------------------------
+   Sections « Aujourd'hui » / « Demain » et pages produit (/aphia, /ilmia).
+   --------------------------------------------------------------- */
+
+/* ---------- Aujourd'hui : liste des capacités ---------- */
+.capabilities { background: var(--surface); }
+.section-intro { max-width: 46ch; }
+.section-intro h2 { text-wrap: balance; }
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(32px, 5vw, 72px);
+  margin-top: clamp(40px, 5vw, 58px);
+  border-top: 1px solid var(--hairline);
+}
+
+.capability {
+  display: grid;
+  grid-template-columns: 34px 22px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.capability-num {
+  color: var(--accent-ink, var(--teal-ink));
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.capability svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-ink, var(--teal-ink));
+}
+
+.capability p {
+  color: var(--ink-strong);
+  font-size: var(--fs-body-md);
+  font-weight: 600;
+}
+
+/* ---------- Demain : feuille de route ---------- */
+.roadmap {
+  background: var(--roadmap-bg);
+  color: var(--roadmap-ink);
+}
+
+.roadmap h2 { color: var(--roadmap-ink); }
+.roadmap .eyebrow { color: var(--roadmap-ink); }
+.roadmap .eyebrow svg { color: var(--roadmap-num); }
+.roadmap > .wrap > div > p { margin-top: var(--sp-lg); color: var(--roadmap-ink-soft); font-size: 1.05rem; }
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+}
+
+.roadmap-list { border-top: 1px solid var(--roadmap-line); }
+
+.roadmap-list div {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 18px;
+  align-items: center;
+  border-bottom: 1px solid var(--roadmap-line);
+}
+
+.roadmap-list span {
+  color: var(--roadmap-num);
+  font-family: var(--display);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.roadmap-list p {
+  margin: 16px 0;
+  color: var(--roadmap-ink);
+  font-weight: 600;
+}
+
+/* ---------- Page produit ---------- */
+.product-page.accent-teal { --accent: var(--teal); --accent-ink: var(--teal-ink); }
+.product-page.accent-indigo { --accent: var(--indigo-ink); --accent-ink: var(--indigo-ink); }
+
+.product-page .eyebrow { color: var(--accent-ink); }
+.product-page .eyebrow svg { color: var(--accent); }
+
+.product-hero {
+  position: relative;
+  padding: calc(var(--header-h) + clamp(40px, 6vw, 72px)) 0 clamp(48px, 6vw, 80px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.product-hero-inner { max-width: 46rem; }
+.product-hero-inner > .eyebrow { margin-top: 0; }
+
+.back-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--sp-lg);
+  color: var(--ink-muted);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  transition: color 0.2s var(--ease);
+}
+
+.back-link svg { width: 15px; height: 15px; transition: transform 0.2s var(--ease); }
+.back-link:hover { color: var(--ink-strong); }
+.back-link:hover svg { transform: translateX(-3px); }
+
+.product-hero h1 {
+  max-width: 19ch;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  text-wrap: balance;
+}
+
+.product-hero .lead {
+  max-width: 52ch;
+  margin-top: var(--sp-lg);
+}
+
+.product-hero .hero-actions {
+  justify-content: flex-start;
+  margin-top: var(--sp-lg);
+}
+
+/* Sous-navigation collante de la page produit */
+.section-nav {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 5;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.section-nav .wrap {
+  display: flex;
+  gap: var(--sp-lg);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.section-nav a {
+  color: var(--ink-muted);
+  transition: color 0.2s var(--ease);
+}
+
+.section-nav a:hover { color: var(--accent-ink); }
+
+/* ---------- Adaptations ---------- */
+@media (max-width: 860px) {
+  .capability-grid,
+  .roadmap-grid { grid-template-columns: 1fr; }
+
+  .section-nav .wrap { overflow-x: auto; }
+}

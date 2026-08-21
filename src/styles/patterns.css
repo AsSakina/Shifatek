@@ -1,0 +1,147 @@
+/* ---------------------------------------------------------------
+   Motifs réutilisables : remplissage au survol et bento.
+   Voir design.md § Interactions et § Layouts.
+   --------------------------------------------------------------- */
+
+/* ---------- Remplissage par le bas au survol ----------
+   La couleur monte depuis le bord inférieur, le texte s'inverse,
+   la pastille d'icône reste au-dessus du remplissage. */
+/* Le porteur doit être positionné (sticky ou relative) : voir .bento-tile.
+   Le remplissage passe par ::after (::before sert déjà d'accent sur les
+   cartes produit) et le contenu est remonté au-dessus par z-index. */
+.wipe {
+  overflow: hidden;
+  transition: color 0.35s var(--ease-wipe), border-color 0.35s var(--ease-wipe);
+}
+
+.wipe::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--fill, var(--surface-container));
+  transform: translateY(101%);
+  transition: transform 0.55s var(--ease-wipe);
+}
+
+.wipe > * { position: relative; z-index: 1; }
+
+@media (hover: hover) {
+  .wipe:hover::after,
+  .wipe:focus-within::after { transform: translateY(0); }
+
+  .wipe:hover,
+  .wipe:focus-within { color: var(--fill-ink, var(--ink)); border-color: transparent; }
+
+  .wipe:hover h3,
+  .wipe:focus-within h3,
+  .wipe:hover .wipe-meta,
+  .wipe:focus-within .wipe-meta { color: var(--fill-ink, var(--ink-strong)); }
+
+  .wipe:hover .wipe-chip svg,
+  .wipe:focus-within .wipe-chip svg { color: var(--fill); }
+}
+
+
+.wipe-chip {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--sp-lg);
+  border-radius: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--teal);
+  transition: color 0.35s var(--ease-wipe);
+}
+
+/* ---------- Bento ----------
+   Grille 12 colonnes, tuiles de tailles inégales. */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--sp-md);
+}
+
+.bento-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 2.2vw, 28px);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  background: var(--card);
+}
+
+.bento-tile h3 {
+  font-size: var(--fs-headline-sm);
+  transition: color 0.35s var(--ease-wipe);
+}
+
+.bento-tile p {
+  margin-top: 10px;
+  font-size: var(--fs-body-sm);
+  line-height: 1.6;
+}
+
+/* Placement : texte haut-gauche, visuel large à droite, valeurs en dessous. */
+.bento-intro { grid-column: span 5; grid-row: span 2; justify-content: center; }
+.bento-visual { grid-column: span 7; }
+.bento-tile:nth-of-type(3) { grid-column: span 3; }
+.bento-tile:nth-of-type(4) { grid-column: span 4; }
+.bento-tile:nth-of-type(5) { grid-column: span 5; }
+.bento-tile:nth-of-type(6) { grid-column: span 7; }
+
+.bento-intro .lead { font-size: var(--fs-body-md); }
+.bento-intro .lead + .lead { margin-top: var(--sp-sm); }
+
+/* Tuile visuelle : toujours sombre, quel que soit le thème (accent de page). */
+.bento-visual {
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+  padding: 0;
+  border-color: transparent;
+  background: linear-gradient(150deg, var(--navy), var(--navy-deep));
+  color: #dbe1ff;
+}
+
+/* En thème sombre, la tuile navy se fond dans la page : on la relève. */
+:root[data-theme='dark'] .bento-visual {
+  background: linear-gradient(150deg, #1d2a4a, #101a31);
+  border-color: rgba(16, 255, 203, 0.22);
+}
+
+.bento-visual .mark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--mint);
+  opacity: 0.55;
+}
+
+.bento-visual .mark svg { width: min(58%, 240px); height: auto; }
+
+.bento-visual .caption {
+  position: relative;
+  margin-top: auto;
+  padding: clamp(20px, 2.2vw, 28px);
+  font-family: var(--display);
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+@media (max-width: 980px) {
+  .bento-intro { grid-column: span 12; grid-row: auto; }
+  .bento-visual { grid-column: span 12; min-height: 200px; }
+  .bento-tile:nth-of-type(3),
+  .bento-tile:nth-of-type(4),
+  .bento-tile:nth-of-type(5),
+  .bento-tile:nth-of-type(6) { grid-column: span 6; }
+}
+
+@media (max-width: 620px) {
+  .bento-tile { grid-column: span 12 !important; }
+}

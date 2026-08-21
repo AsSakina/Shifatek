@@ -1,0 +1,257 @@
+/* Maquettes produit — 100 % CSS/SVG, aucune capture d'écran réelle. */
+
+.mock {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  background: var(--card);
+  box-shadow: var(--shadow-modal);
+  font-size: var(--fs-body-sm);
+  line-height: 1.4;
+  text-align: left;
+}
+
+.mock-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  padding: 10px var(--sp-md);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-container-low);
+}
+
+.mock-dots { display: flex; gap: 6px; }
+.mock-dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--outline-variant);
+}
+
+.mock-name {
+  color: var(--ink-strong);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mock-bar .spacer { flex: 1; }
+
+/* Pastille de synchronisation : Hors ligne → Synchronisé, en boucle */
+.sync-pill {
+  position: relative;
+  display: inline-grid;
+  min-width: 116px;
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  background: var(--navy-10);
+  color: var(--ink-strong);
+  font-size: var(--fs-label);
+  font-weight: 600;
+}
+
+.sync-pill span {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  animation: sync-swap 6s var(--ease) infinite;
+}
+
+.sync-pill .online { animation-delay: -3s; }
+.sync-pill i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--outline);
+}
+.sync-pill .online { color: var(--teal-ink); }
+.sync-pill .online i { background: var(--teal); }
+
+.mock-body { display: grid; grid-template-columns: 132px 1fr; }
+
+.mock-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--sp-sm);
+  border-right: 1px solid var(--border);
+  background: var(--surface-container-lowest);
+}
+
+.mock-side button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: var(--r-action);
+  background: none;
+  color: var(--on-surface-variant);
+  font: 500 var(--fs-body-sm) var(--body);
+  text-align: left;
+  cursor: default;
+}
+
+.mock-side button.active { background: var(--teal-10); color: var(--teal-ink); font-weight: 600; }
+.mock-side svg { width: 15px; height: 15px; }
+
+.mock-main { padding: var(--sp-sm) var(--sp-md) var(--sp-md); }
+
+.mock-row {
+  display: grid;
+  grid-template-columns: 1fr 68px 96px;
+  align-items: center;
+  gap: var(--sp-sm);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--surface-container-high);
+}
+
+.mock-row:last-child { border-bottom: 0; }
+
+.mock-row.head {
+  color: var(--outline);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mock-row strong { color: var(--ink-strong); font-weight: 500; }
+.mock-row .qty { color: var(--on-surface-variant); font-variant-numeric: tabular-nums; }
+
+.pill {
+  justify-self: start;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  background: var(--navy-10);
+  color: var(--ink-strong);
+  font-size: var(--fs-label);
+  font-weight: 600;
+}
+
+/* Fond coral-ink et non coral pur : le blanc dessus reste lisible (4,7:1). */
+.pill.alert { background: var(--alert-bg); color: var(--alert-ink); }
+
+.mock-row.queue { grid-template-columns: 1fr 116px; }
+
+.pill.done {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--teal-10);
+  color: var(--teal-ink);
+}
+
+.pill.done svg { width: 11px; height: 11px; }
+
+/* --- Ilmia : carte de scénario clinique --- */
+.mock-ilmia .mock-bar { background: var(--indigo-10); }
+
+.mock-quiz { padding: var(--sp-md); }
+
+.skeleton {
+  height: 9px;
+  border-radius: var(--r-pill);
+  background: var(--surface-container-high);
+}
+
+.skeleton + .skeleton { margin-top: 8px; }
+.skeleton.short { width: 62%; }
+
+.answers { display: flex; flex-direction: column; gap: 8px; margin-top: var(--sp-md); }
+
+.answer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-action);
+  background: var(--surface-container-lowest);
+}
+
+.answer .key {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--r-micro);
+  background: var(--surface-container-high);
+  color: var(--on-surface-variant);
+  font-size: var(--fs-label);
+  font-weight: 600;
+}
+
+.answer .skeleton { flex: 1; }
+
+.answer.correct {
+  border-color: var(--teal);
+  background: var(--teal-10);
+  animation: answer-in 6s var(--ease) infinite;
+}
+
+.answer.correct .key { background: var(--teal); color: #fff; }
+.answer.correct .skeleton { background: rgba(0, 118, 122, 0.25); }
+
+.answer .verdict {
+  color: var(--teal-ink);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.quiz-foot {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  margin-top: var(--sp-md);
+  color: var(--outline);
+  font-size: var(--fs-label);
+  font-weight: 600;
+}
+
+.progress {
+  flex: 1;
+  height: 6px;
+  border-radius: var(--r-pill);
+  background: var(--surface-container-high);
+  overflow: hidden;
+}
+
+.progress i {
+  display: block;
+  height: 100%;
+  width: 30%;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--teal), var(--mint));
+  animation: progress-fill 6s var(--ease) infinite;
+}
+
+.ia-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  background: var(--ink-strong);
+  color: var(--surface);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.ia-badge svg { color: var(--mint); }
+
+@media (max-width: 520px) {
+  .mock-body { grid-template-columns: 1fr; }
+  .mock-side { flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--border); }
+
+  /* La colonne « Quantité » disparaît : deux colonnes suffisent. */
+  .mock-row,
+  .mock-row.queue { grid-template-columns: minmax(0, 1fr) auto; }
+  .mock-row .qty,
+  .mock-row.head:not(.queue) span:nth-child(2) { display: none; }
+  .mock-row strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
