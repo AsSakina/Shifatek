@@ -173,29 +173,25 @@ export const footer = {
   legal: '© 2026 Shifatek — Dakar, Sénégal. Tous droits réservés.',
 } as const
 
-/** Recherche appliquée portée par les fondateurs, au-delà des produits. */
+/** Recherche appliquée : une ambition d'entreprise, au-delà des produits. */
 export const researchIntro = {
   eyebrow: 'Recherche',
-  title: 'Approfondir, au-delà des produits.',
-  text: 'Shifatek élargit son ambition vers la recherche appliquée. Deux axes portés par ses fondateurs, ancrés dans les réalités du terrain sénégalais.',
+  title: 'La santé mérite une recherche exigeante.',
+  text: 'Shifatek considère la santé comme un domaine qui exige rigueur scientifique et recherche continue — pas seulement des produits. C’est une ambition de long terme, portée dès aujourd’hui à travers deux axes explorés par notre équipe.',
 } as const
 
 export const research = [
   {
     id: 'tb-cxr',
-    tag: 'Candidature Master · NAIST, Japon',
-    title: 'Analyse assistée par IA de radiographies thoraciques pour le triage de la tuberculose',
-    text: 'Le Sénégal recense environ 132 cas de tuberculose pour 100 000 habitants. La radiographie thoracique reste le seul examen d’imagerie couramment accessible pour le dépistage, mais les modèles d’IA existants, entraînés sur des données non africaines, perdent en fiabilité dans ce contexte. Ce projet explore des méthodes d’apprentissage profond légères pour détecter les anomalies pulmonaires évocatrices de tuberculose sur des radiographies de qualité variable.',
-    author: 'Yaye Soukeye Faye',
-    role: 'Cofondatrice de Shifatek',
+    tag: 'Diagnostic assisté par IA',
+    title: 'Dépistage de la tuberculose par analyse de radiographies thoraciques',
+    text: 'Le Sénégal recense environ 132 cas de tuberculose pour 100 000 habitants. La radiographie thoracique reste le seul examen d’imagerie couramment accessible pour le dépistage, mais les modèles d’IA existants, entraînés sur des données non africaines, perdent en fiabilité dans ce contexte. Nous explorons des méthodes d’apprentissage profond légères, adaptées aux radiographies de qualité variable rencontrées sur le terrain.',
   },
   {
     id: 'gyfawo',
-    tag: 'Projet de thèse · Management de la santé',
+    tag: 'IA clinique & télémédecine',
     title: 'GYFAWO — Assistance gynécologique par IA et télémédecine',
-    text: 'Dans les zones reculées du Sénégal, 68 % des spécialistes sont concentrés à Dakar. GYFAWO étudie la conception, la validation et le déploiement d’un dispositif combinant un agent IA d’appui clinique et des services de télémédecine, pour renforcer les sages-femmes et infirmiers des postes de santé dans le suivi prénatal.',
-    author: 'Dr Aliou Ndiaye',
-    role: 'Pharmacien, expert en santé numérique',
+    text: 'Dans les zones reculées du Sénégal, 68 % des spécialistes sont concentrés à Dakar. GYFAWO explore un dispositif combinant un agent IA d’appui clinique et des services de télémédecine, pour renforcer les sages-femmes et infirmiers des postes de santé dans le suivi prénatal.',
   },
 ] as const
 

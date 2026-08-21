@@ -204,18 +204,6 @@
 .research-card h3 { margin: var(--sp-md) 0 var(--sp-sm); }
 .research-card p { font-size: var(--fs-body-md); }
 
-.research-byline {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  margin-top: var(--sp-lg);
-  padding-top: var(--sp-md);
-  border-top: 1px solid var(--hairline);
-}
-
-.research-byline strong { color: var(--ink-strong); font-size: var(--fs-body-sm); font-weight: 700; }
-.research-byline span { color: var(--ink-muted); font-size: var(--fs-label); }
-
 /* ---------- Contact : bandeau coral pleine largeur ---------- */
 .contact-section {
   background: var(--contact-bg);

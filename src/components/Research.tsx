@@ -18,10 +18,6 @@ export function Research() {
               <span className="tag">{item.tag}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <div className="research-byline">
-                <strong>{item.author}</strong>
-                <span>{item.role}</span>
-              </div>
             </Reveal>
           ))}
         </div>
