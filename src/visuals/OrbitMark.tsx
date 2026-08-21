@@ -1,9 +1,9 @@
 /**
- * Composition décorative : anneaux concentriques + initiale Shifatek au centre.
- * L'étoile Nsoromma appartient à l'identité d'APHIA (cf. Roadmap) : elle ne
- * sert pas de marque générique Shifatek.
+ * Composition décorative : anneaux concentriques, purement abstraite.
+ * Pas de lettre ni de symbole au centre — ni l'étoile Nsoromma (identité
+ * d'APHIA, cf. Roadmap), ni une initiale : juste le motif.
  */
-export function OrbitMark({ letter = 'S' }: { letter?: string }) {
+export function OrbitMark() {
   return (
     <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false" className="drift">
       <g fill="none" stroke="currentColor" strokeOpacity="0.35">
@@ -21,18 +21,7 @@ export function OrbitMark({ letter = 'S' }: { letter?: string }) {
           fillOpacity="0.5"
         />
       ))}
-      <text
-        x="100"
-        y="100"
-        textAnchor="middle"
-        dominantBaseline="central"
-        fill="currentColor"
-        fontFamily="Manrope, system-ui, sans-serif"
-        fontSize="86"
-        fontWeight="800"
-      >
-        {letter}
-      </text>
+      <circle cx="100" cy="100" r="5" fill="currentColor" fillOpacity="0.4" />
     </svg>
   )
 }
