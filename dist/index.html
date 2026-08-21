@@ -1,13 +1,41 @@
 <!doctype html>
-<html lang="fr" class="bg-navy">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Shifatek conçoit des outils de santé digitale pour l'Afrique de l'Ouest." />
-    <meta name="theme-color" content="#222E50" />
+    <meta name="theme-color" content="#fbf8fb" />
     <title>Shifatek — Santé digitale et innovation</title>
-    <script type="module" crossorigin src="/assets/index-Duir9Rdq.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Dz8VfLpw.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shifatek — Santé digitale et innovation" />
+    <meta property="og:description" content="Shifatek conçoit des outils de santé digitale pour l'Afrique de l'Ouest." />
+    <meta property="og:locale" content="fr_SN" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Shifatek — Santé digitale et innovation" />
+    <meta name="twitter:description" content="Shifatek conçoit des outils de santé digitale pour l'Afrique de l'Ouest." />
+    <script type="module" crossorigin src="/assets/index-CWOsFoUu.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B-DzUjbB.css">
   </head>
-  <body><div id="root"></div></body>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Pose le thème avant le premier rendu pour éviter tout flash.
+      (function () {
+        try {
+          var stored = localStorage.getItem('shifatek-theme')
+          var theme = stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+          document.documentElement.dataset.theme = theme
+          if (theme === 'dark') {
+            document.querySelector('meta[name="theme-color"]').content = '#0d1426'
+          }
+        } catch (e) {}
+      })()
+    </script>
+  </body>
 </html>

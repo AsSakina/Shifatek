@@ -1,0 +1,7 @@
+node_modules/
+tsconfig.tsbuildinfo
+
+# Secrets : la clé Resend ne doit jamais être commitée
+.env
+.env.local
+.env.*.local
