@@ -62,6 +62,8 @@
 
   .tile,
   .drift,
+  .hero-dots,
+  .hero-glow,
   .sync-pill span,
   .answer.correct,
   .progress i { animation: none; }

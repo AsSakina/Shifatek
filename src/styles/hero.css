@@ -21,12 +21,19 @@
   opacity: 0.55;
   -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, #000 12%, transparent 74%);
   mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, #000 12%, transparent 74%);
+  animation: dots-pulse 7s ease-in-out infinite;
+}
+
+@keyframes dots-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.6; }
 }
 
 .hero-glow {
   position: absolute;
   border-radius: 50%;
   filter: blur(10px);
+  animation: glow-pulse 11s ease-in-out infinite;
 }
 
 .hero-glow.one {
@@ -45,6 +52,12 @@
   max-width: 600px;
   aspect-ratio: 1;
   background: radial-gradient(circle, var(--glow-teal), transparent 64%);
+  animation-delay: -5.5s;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.08); opacity: 1; }
 }
 
 /* Composition centrée : texte au-dessus, scène produit en dessous */

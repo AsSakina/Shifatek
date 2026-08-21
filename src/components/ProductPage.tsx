@@ -1,6 +1,5 @@
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Activity } from 'lucide-react'
 import { productContact, productNav, productPages, type ProductId } from '../content'
-import { NsoromaStar } from '../visuals/NsoromaStar'
 import { Capabilities } from './Capabilities'
 import { Contact } from './Contact'
 import { Roadmap } from './Roadmap'
@@ -24,7 +23,7 @@ export function ProductPage({ id }: { id: ProductId }) {
               {productNav.back}
             </a>
             <span className="eyebrow">
-              <NsoromaStar size={11} />
+              <Activity size={11} />
               {data.kicker}
             </span>
             <h1>{data.title}</h1>
