@@ -17,7 +17,7 @@ export const hero = {
   titleAfter: '.',
   text: "Shifatek conçoit des outils de santé digitale et des solutions innovantes pour l'Afrique de l'Ouest — en partant des besoins réels des pharmacies, des soignants, des étudiants, des entreprises privées et des organisations sanitaires (ministère, ONG…), plutôt que de solutions importées.",
   primaryCta: 'Découvrir notre mission',
-  secondaryCta: 'Nous contacter ',
+  secondaryCta: 'Nous contacter',
 } as const
 
 export const mission = {
@@ -58,7 +58,7 @@ export const about = {
   eyebrow: "L'équipe",
   title: 'Une équipe entre la tech, la santé et le terrain sénégalais.',
   paragraphs: [
-    "Basée à Dakar, Shifatek réunit une expertise technique réelle — data science, développement, IA — et une connaissance intime des réalités de la santé en Afrique de l'Ouest.",
+    "Basée à Dakar, Shifatek réunit une expertise technique solide — data science, développement, IA — et une connaissance fine des réalités de la santé en Afrique de l'Ouest.",
     'Nous construisons avec une exigence : chaque outil doit fonctionner dans le monde réel, pas seulement en démonstration.',
   ],
 } as const
@@ -73,7 +73,7 @@ export const values = [
 /** « Aujourd'hui » — ce que le produit fait déjà, sur la page d'accueil. */
 export const capabilities = {
   eyebrow: 'Aujourd’hui',
-  title: 'Tout ce dont votre équipe a besoin, au même endroit.',
+  title: 'Tout ce dont vous avez besoin, au même endroit.',
 } as const
 
 /** « Demain » — la feuille de route, réservée à la page APHIA Care. */
@@ -118,7 +118,7 @@ export const productPages = {
     title: 'Formez votre raisonnement clinique, un cas à la fois.',
     intro: 'Ilmia transforme le cours de médecine en cas à résoudre : simulation de patients, tournois entre facultés et tutorat adaptatif, construits avec des experts et ancrés dans les pathologies ouest-africaines.',
     accent: 'indigo',
-    cta: 'Découvrir Ilmia',
+    cta: 'Échanger avec l’équipe',
     ctaHref: '/#contact',
     secondary: 'Rejoindre la cohorte pilote',
     secondaryHref: '/#contact',
@@ -132,12 +132,12 @@ export const productPages = {
   formations: {
     name: 'Formations',
     kicker: 'Formation data & IA',
-    title: 'Apprendre la donnée et l’IA, sans jargon inutile.',
-    intro: 'Dans l’esprit des ateliers menés avec Gomycode, Shifatek forme équipes, dirigeants et particuliers aux fondamentaux de la donnée et de l’intelligence artificielle — des sessions concrètes, pensées pour des débutants, ancrées dans des cas réels plutôt que dans la théorie.',
+    title: 'Apprendre la donnée et l’IA, sans jargon.',
+    intro: 'Shifatek forme équipes, dirigeants et particuliers aux fondamentaux de la donnée et de l’intelligence artificielle — des sessions concrètes, pensées pour des débutants, ancrées dans des cas réels plutôt que dans la théorie.',
     accent: 'mint',
     cta: 'Réserver une session',
     ctaHref: '/#contact',
-    secondary: 'Être informé des prochaines sessions',
+    secondary: 'Recevoir les prochaines sessions',
     secondaryHref: '/#contact',
     features: [
       'Fondamentaux de la donnée : collecte, structuration, visualisation',
@@ -160,7 +160,7 @@ export const productNav = {
 export const productContact = {
   eyebrow: 'Échangeons',
   title: 'Prêt à faire le prochain pas ?',
-  text: 'Une démo, une question ou un contexte particulier : écrivez-nous.',
+  text: 'Une question, un projet ou une envie d’en savoir plus : écrivez-nous.',
 } as const
 
 export const contact = {
@@ -225,7 +225,7 @@ export const chatTopics = [
   {
     id: 'mission',
     question: 'Quelle est votre mission ?',
-    answer: 'Nous partons des besoins réels observés sur le terrain — pharmacies, facultés de médecine — plutôt que d’importer des solutions toutes faites.',
+    answer: 'Nous partons des besoins réels observés sur le terrain — pharmacies, soignants, étudiants, entreprises, organisations sanitaires — plutôt que d’importer des solutions toutes faites.',
     link: { label: 'En savoir plus', href: '/#mission' },
   },
   {
@@ -239,6 +239,12 @@ export const chatTopics = [
     question: 'Parle-moi d’Ilmia',
     answer: 'Ilmia forme les étudiants et professionnels de santé par le jeu : des scénarios cliniques interactifs, guidés par l’IA, ancrés dans le contexte ouest-africain.',
     link: { label: 'Découvrir Ilmia', href: '/ilmia' },
+  },
+  {
+    id: 'formations',
+    question: 'Proposez-vous des formations ?',
+    answer: 'Oui : des sessions data et IA pour équipes, dirigeants et particuliers — concrètes, pensées pour des débutants, ancrées dans des cas réels.',
+    link: { label: 'Découvrir les formations', href: '/formations' },
   },
   {
     id: 'contact',
