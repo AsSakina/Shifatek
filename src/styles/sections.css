@@ -189,7 +189,20 @@
   }
 }
 
-/* ---------- Recherche : deux projets portés par les fondateurs ---------- */
+/* ---------- Recherche : deux axes explorés par l'équipe ---------- */
+.research-section { overflow: hidden; }
+
+.research-mark {
+  position: absolute;
+  top: 50%;
+  right: -4%;
+  width: min(38%, 380px);
+  translate: 0 -50%;
+  color: var(--teal);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
 .research-head { max-width: 56ch; margin-bottom: clamp(40px, 5vw, 64px); }
 .research-head p { margin-top: var(--sp-md); }
 
@@ -200,9 +213,29 @@
   align-items: stretch;
 }
 
-.research-card { padding: clamp(24px, 2.6vw, 34px); }
+.research-card {
+  position: relative;
+  padding: clamp(24px, 2.6vw, 34px);
+  transition:
+    color 0.35s var(--ease-wipe),
+    border-color 0.35s var(--ease-wipe),
+    box-shadow 0.35s var(--ease),
+    transform 0.35s var(--ease);
+}
+
+.research-card .tag { transition: background 0.35s var(--ease-wipe), color 0.35s var(--ease-wipe); }
 .research-card h3 { margin: var(--sp-md) 0 var(--sp-sm); }
 .research-card p { font-size: var(--fs-body-md); }
+
+@media (hover: hover) {
+  .research-card:hover,
+  .research-card:focus-within { box-shadow: var(--shadow-hover); border-color: transparent; transform: translateY(-3px); }
+
+  .research-card:hover .tag,
+  .research-card:focus-within .tag { background: rgba(255, 255, 255, 0.2); color: var(--fill-ink); }
+}
+
+@media (max-width: 860px) { .research-mark { display: none; } }
 
 /* ---------- Contact : bandeau coral pleine largeur ---------- */
 .contact-section {
