@@ -80,6 +80,29 @@
 
 .theme-toggle svg { width: 17px; height: 17px; }
 
+.locale-toggle {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-action);
+  background: var(--card);
+  color: var(--ink-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.locale-toggle:hover {
+  background: var(--ink-strong);
+  color: var(--surface);
+  border-color: var(--ink-strong);
+}
+
 .nav-links a {
   position: relative;
   color: var(--on-surface-variant);
@@ -149,4 +172,13 @@
   .nav-links.open { transform: none; }
   .nav-links a { font-size: 1.1rem; }
   .burger { display: inline-flex; }
+
+  /* nav-links est fixed sur toute la hauteur : sans ça, le panneau ouvert
+     recouvre le burger et les bascules thème/langue, les rendant inutilisables. */
+  .locale-toggle,
+  .theme-toggle,
+  .burger {
+    position: relative;
+    z-index: 1;
+  }
 }

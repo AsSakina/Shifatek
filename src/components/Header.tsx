@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { nav, navCta } from '../content'
+import { useContent } from '../lib/ContentContext'
 import { useActiveSection } from '../lib/useActiveSection'
 import { useScrollProgress } from '../lib/useScrollProgress'
+import { LocaleToggle } from './LocaleToggle'
 import { ThemeToggle } from './ThemeToggle'
 
 const SECTION_IDS = ['mission', 'produits', 'apropos', 'recherche', 'contact'] as const
 
 export function Header() {
+  const { nav, navCta, ui } = useContent()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const headerRef = useScrollProgress<HTMLElement>()
@@ -35,7 +37,7 @@ export function Header() {
         <nav
           id="main-navigation"
           className={open ? 'nav-links open' : 'nav-links'}
-          aria-label="Navigation principale"
+          aria-label={ui.mainNav}
         >
           {nav.map(({ label, href }) => (
             <a
@@ -51,10 +53,11 @@ export function Header() {
             {navCta}
           </a>
         </nav>
+        <LocaleToggle />
         <ThemeToggle />
         <button
           className="burger"
-          aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-label={open ? ui.closeMenu : ui.openMenu}
           aria-expanded={open}
           aria-controls="main-navigation"
           onClick={() => setOpen(!open)}

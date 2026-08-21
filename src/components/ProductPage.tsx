@@ -1,11 +1,13 @@
 import { ArrowLeft, ArrowRight, Activity } from 'lucide-react'
-import { productContact, productNav, productPages, type ProductId } from '../content'
+import type { Content, ProductId } from '../content'
+import { useContent } from '../lib/ContentContext'
 import { Capabilities } from './Capabilities'
 import { Contact } from './Contact'
 import { Roadmap } from './Roadmap'
 
-/** Page produit : /aphia et /ilmia. La feuille de route est propre à APHIA. */
+/** Page produit : /aphia, /ilmia, /formations. La feuille de route est propre à APHIA. */
 export function ProductPage({ id }: { id: ProductId }) {
+  const { productPages, productNav, productContact } = useContent()
   const data = productPages[id]
   const hasRoadmap = id === 'aphia'
 
@@ -57,6 +59,6 @@ export function ProductPage({ id }: { id: ProductId }) {
 }
 
 /** Titre de page côté client : utile puisque la navigation recharge la page. */
-export function productTitle(id: ProductId) {
-  return `${productPages[id].name} — Shifatek`
+export function productTitle(content: Content, id: ProductId) {
+  return `${content.productPages[id].name} — ${content.meta.title.split(' — ')[0]}`
 }

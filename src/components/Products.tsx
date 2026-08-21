@@ -1,4 +1,4 @@
-import { products, productsIntro } from '../content'
+import { useContent } from '../lib/ContentContext'
 import { AphiaMockup } from '../visuals/AphiaMockup'
 import { IlmiaMockup } from '../visuals/IlmiaMockup'
 import { Reveal } from './Reveal'
@@ -20,6 +20,7 @@ const PREVIEWS = {
 } as const
 
 export function Products() {
+  const { products, productsIntro } = useContent()
   return (
     <section className="band band-tinted" id="produits">
       <div className="wrap">
@@ -43,7 +44,7 @@ export function Products() {
                 <i />
                 {product.status}
               </span>
-              <div className="product-preview">{PREVIEWS[product.id]}</div>
+              <div className="product-preview">{PREVIEWS[product.id as keyof typeof PREVIEWS]}</div>
             </Reveal>
           ))}
         </div>

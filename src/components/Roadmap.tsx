@@ -1,9 +1,10 @@
-import { roadmap } from '../content'
+import { useContent } from '../lib/ContentContext'
 import { NsoromaStar } from '../visuals/NsoromaStar'
 import { Reveal } from './Reveal'
 
 /** « Demain » : la feuille de route APHIA V2, sur un bandeau menthe. */
 export function Roadmap() {
+  const { roadmap } = useContent()
   return (
     <section className="band roadmap" id="avenir">
       <div className="wrap roadmap-grid">

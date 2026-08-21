@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import { Compass, Radio, Sparkles, Target } from 'lucide-react'
-import { about, values } from '../content'
+import { useContent } from '../lib/ContentContext'
 import { OrbitMark } from '../visuals/OrbitMark'
 import { Reveal } from './Reveal'
 import { SectionLabel } from './SectionLabel'
@@ -14,6 +14,7 @@ const TILES = [
 ] as const
 
 export function Values() {
+  const { about, values, contact } = useContent()
   return (
     <section className="band" id="apropos">
       <div className="wrap">
@@ -30,7 +31,7 @@ export function Values() {
             <span className="mark" aria-hidden="true">
               <OrbitMark />
             </span>
-            <span className="caption">Dakar, Sénégal</span>
+            <span className="caption">{contact.location}</span>
           </Reveal>
 
           {values.map(([title, text], i) => {

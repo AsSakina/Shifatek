@@ -1,18 +1,24 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, MessageCircle, X } from 'lucide-react'
-import { chatbot, chatTopics } from '../content'
+import type { Content } from '../content'
+import { useContent } from '../lib/ContentContext'
 
-type Topic = (typeof chatTopics)[number]
+type Topic = Content['chatTopics'][number]
 type Message = { from: 'bot' | 'user'; text: string; link?: Topic['link'] }
-
-const initialMessages: Message[] = [{ from: 'bot', text: chatbot.greeting }]
 
 /** Bulle de chat FAQ : questions prédéfinies, réponses fixes, aucun appel réseau. */
 export function Chatbot() {
+  const { chatbot, chatTopics } = useContent()
   const [open, setOpen] = useState(false)
-  const [messages, setMessages] = useState<Message[]>(initialMessages)
+  const [messages, setMessages] = useState<Message[]>(() => [{ from: 'bot', text: chatbot.greeting }])
   const [asked, setAsked] = useState<string[]>([])
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  // Repart de zéro si la langue change en cours de conversation.
+  useEffect(() => {
+    setMessages([{ from: 'bot', text: chatbot.greeting }])
+    setAsked([])
+  }, [chatbot])
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
@@ -24,7 +30,7 @@ export function Chatbot() {
   }
 
   const reset = () => {
-    setMessages(initialMessages)
+    setMessages([{ from: 'bot', text: chatbot.greeting }])
     setAsked([])
   }
 

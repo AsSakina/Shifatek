@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import { HeartPulse, ScanLine } from 'lucide-react'
-import { research, researchIntro } from '../content'
+import { useContent } from '../lib/ContentContext'
 import { OrbitMark } from '../visuals/OrbitMark'
 import { Reveal } from './Reveal'
 import { SectionLabel } from './SectionLabel'
@@ -13,6 +13,7 @@ const TILES = [
 
 /** Recherche : deux axes explorés par l'équipe, cartes animées au survol. */
 export function Research() {
+  const { research, researchIntro } = useContent()
   return (
     <section className="band band-tinted research-section" id="recherche">
       <span className="research-mark" aria-hidden="true">

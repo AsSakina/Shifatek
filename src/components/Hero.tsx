@@ -1,6 +1,6 @@
 import { ArrowRight, Activity } from 'lucide-react'
 import type { CSSProperties } from 'react'
-import { hero } from '../content'
+import { useContent } from '../lib/ContentContext'
 import { AphiaMockup } from '../visuals/AphiaMockup'
 import { FloatingTiles } from '../visuals/FloatingTiles'
 
@@ -8,6 +8,7 @@ import { FloatingTiles } from '../visuals/FloatingTiles'
 const step = (i: number) => ({ '--i': i }) as CSSProperties
 
 export function Hero() {
+  const { hero } = useContent()
   return (
     <section className="hero">
       <div className="hero-bg" aria-hidden="true">
