@@ -76,6 +76,8 @@
   .btn-secondary,
   .product-card,
   .theme-toggle,
+  .chatbot-toggle,
+  .chatbot-chip,
   body,
   form button { transition: none; }
 

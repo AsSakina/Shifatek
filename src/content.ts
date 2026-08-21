@@ -172,3 +172,45 @@ export const footer = {
   legal: '© 2026 Shifatek — Dakar, Sénégal. Tous droits réservés.',
 } as const
 
+/** Assistant FAQ (bulle de chat) — réponses prédéfinies, aucune IA générative. */
+export const chatbot = {
+  label: 'Assistant Shifatek',
+  greeting: 'Bonjour ! Je suis l’assistant Shifatek. Choisis une question ci-dessous.',
+  openLabel: 'Ouvrir l’assistant Shifatek',
+  closeLabel: 'Fermer l’assistant',
+  resetLabel: 'Poser une autre question',
+} as const
+
+export const chatTopics = [
+  {
+    id: 'mission',
+    question: 'Quelle est votre mission ?',
+    answer: 'Nous partons des besoins réels observés sur le terrain — pharmacies, facultés de médecine — plutôt que d’importer des solutions toutes faites.',
+    link: { label: 'En savoir plus', href: '/#mission' },
+  },
+  {
+    id: 'aphia',
+    question: 'Parle-moi d’APHIA Care',
+    answer: 'APHIA Care est notre ERP pour les pharmacies sénégalaises : stock, ventes, réception. Conçu offline-first, il fonctionne même sans connexion stable.',
+    link: { label: 'Découvrir APHIA Care', href: '/aphia' },
+  },
+  {
+    id: 'ilmia',
+    question: 'Parle-moi d’Ilmia',
+    answer: 'Ilmia forme les étudiants et professionnels de santé par le jeu : des scénarios cliniques interactifs, guidés par l’IA, ancrés dans le contexte ouest-africain.',
+    link: { label: 'Découvrir Ilmia', href: '/ilmia' },
+  },
+  {
+    id: 'contact',
+    question: 'Comment vous contacter ?',
+    answer: 'Le plus simple est d’utiliser le formulaire de contact, ou de nous écrire directement à contact@shifatek.com — nous répondons rapidement.',
+    link: { label: 'Ouvrir le formulaire', href: '/#contact' },
+  },
+  {
+    id: 'location',
+    question: 'Où êtes-vous basés ?',
+    answer: 'Nous sommes une équipe basée à Dakar, au Sénégal, au service de la santé en Afrique de l’Ouest.',
+    link: undefined,
+  },
+] as const
+
