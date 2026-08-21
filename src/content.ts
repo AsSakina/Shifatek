@@ -114,7 +114,7 @@ export const productPages = {
   ilmia: {
     name: 'Ilmia',
     kicker: 'Entraînement clinique par la simulation',
-    title: 'Des cas cliniques, pas des chapitres.',
+    title: 'Formez votre raisonnement clinique, un cas à la fois.',
     intro: 'Ilmia transforme le cours de médecine en cas à résoudre : simulation de patients, tournois entre facultés et tutorat adaptatif, construits avec des experts et ancrés dans les pathologies ouest-africaines.',
     accent: 'indigo',
     cta: 'Découvrir Ilmia',
