@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { ArrowRight, Check } from 'lucide-react'
-import { contact, formFields, messageField } from '../content'
+import { useContent } from '../lib/ContentContext'
 import { Reveal } from './Reveal'
 import { SectionLabel } from './SectionLabel'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
 function ContactForm() {
+  const { contact, formFields, messageField } = useContent()
   const [status, setStatus] = useState<Status>('idle')
 
   /** Envoi vers la fonction serverless, qui relaie à Resend. */
@@ -88,18 +89,23 @@ type Props = {
   index?: number
 }
 
-export function Contact({ eyebrow = contact.eyebrow, title = contact.title, text = contact.text, index }: Props) {
+export function Contact({ eyebrow, title, text, index }: Props) {
+  const { contact } = useContent()
+  const heading = title ?? contact.title
+  const kicker = eyebrow ?? contact.eyebrow
+  const body = text ?? contact.text
+
   return (
     <section className="band contact-section" id="contact">
       <div className="wrap contact-grid">
         <Reveal className="contact-info">
           {index ? (
-            <SectionLabel index={index}>{eyebrow}</SectionLabel>
+            <SectionLabel index={index}>{kicker}</SectionLabel>
           ) : (
-            <span className="eyebrow">{eyebrow}</span>
+            <span className="eyebrow">{kicker}</span>
           )}
-          <h2>{title}</h2>
-          <p>{text}</p>
+          <h2>{heading}</h2>
+          <p>{body}</p>
           <div className="contact-meta">
             <div>
               <small>{contact.locationLabel}</small>

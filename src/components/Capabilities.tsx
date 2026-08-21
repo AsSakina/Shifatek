@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react'
-import { capabilities } from '../content'
+import { useContent } from '../lib/ContentContext'
 import { Reveal } from './Reveal'
 import { SectionLabel } from './SectionLabel'
 
@@ -10,12 +10,15 @@ import { SectionLabel } from './SectionLabel'
 export function Capabilities({
   features,
   index,
-  title = capabilities.title,
+  title,
 }: {
   features: readonly string[]
   index?: number
   title?: string
 }) {
+  const { capabilities } = useContent()
+  const heading = title ?? capabilities.title
+
   return (
     <section className="band capabilities" id="fonctionnalites">
       <div className="wrap">
@@ -25,7 +28,7 @@ export function Capabilities({
           ) : (
             <span className="eyebrow">{capabilities.eyebrow}</span>
           )}
-          <h2>{title}</h2>
+          <h2>{heading}</h2>
         </Reveal>
         <div className="capability-grid">
           {features.map((feature, i) => (

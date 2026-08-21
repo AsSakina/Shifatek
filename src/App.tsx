@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { productPages, type ProductId } from './content'
+import { productIds, type ProductId } from './content'
+import { useContent } from './lib/ContentContext'
 import { Capabilities } from './components/Capabilities'
 import { Chatbot } from './components/Chatbot'
 import { Contact } from './components/Contact'
@@ -12,13 +13,14 @@ import { Products } from './components/Products'
 import { Research } from './components/Research'
 import { Values } from './components/Values'
 
-/** Routage minimal sur le chemin : une page produit par clé de productPages, sinon l'accueil. */
+/** Routage minimal sur le chemin : une page produit par id connu, sinon l'accueil. */
 function currentRoute(): ProductId | null {
   const id = window.location.pathname.replace(/\/$/, '').slice(1)
-  return id in productPages ? (id as ProductId) : null
+  return (productIds as string[]).includes(id) ? (id as ProductId) : null
 }
 
 function Home() {
+  const { productPages } = useContent()
   return (
     <main id="top">
       <Hero />
@@ -34,10 +36,12 @@ function Home() {
 
 export function App() {
   const route = currentRoute()
+  const content = useContent()
 
   useEffect(() => {
-    document.title = route ? productTitle(route) : 'Shifatek — Santé digitale et innovation'
-  }, [route])
+    document.title = route ? productTitle(content, route) : content.meta.title
+    document.querySelector('meta[name="description"]')?.setAttribute('content', content.meta.description)
+  }, [route, content])
 
   return (
     <>

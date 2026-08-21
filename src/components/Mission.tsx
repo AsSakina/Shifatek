@@ -1,4 +1,4 @@
-import { mission } from '../content'
+import { useContent } from '../lib/ContentContext'
 import { OrbitMark } from '../visuals/OrbitMark'
 import { Reveal } from './Reveal'
 import { SectionLabel } from './SectionLabel'
@@ -8,6 +8,7 @@ import { SectionLabel } from './SectionLabel'
  * grand, puis l'argumentaire en deux colonnes sous un filet.
  */
 export function Mission() {
+  const { mission } = useContent()
   return (
     <section className="band statement" id="mission">
       <span className="statement-mark" aria-hidden="true">
