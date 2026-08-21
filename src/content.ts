@@ -15,7 +15,7 @@ export const hero = {
   titleBefore: 'La technologie de santé, pensée ',
   titleEm: 'depuis le terrain',
   titleAfter: '.',
-  text: "Shifatek conçoit des outils de santé digitale et des solutions innovantes pour l'Afrique de l'Ouest — en partant des besoins réels des pharmacies, des soignants et des étudiants, plutôt que de solutions importées.",
+  text: "Shifatek conçoit des outils de santé digitale et des solutions innovantes pour l'Afrique de l'Ouest — en partant des besoins réels des pharmacies, des soignants, des étudiants, des entreprises privées et des organisations sanitaires, plutôt que de solutions importées.",
   primaryCta: 'Découvrir notre mission',
   secondaryCta: 'Nous contacter ',
 } as const
@@ -25,7 +25,7 @@ export const mission = {
   title: 'Partir des besoins réels, pas importer des solutions toutes faites.',
   paragraphs: [
     "Trop d'outils numériques de santé sont pensés ailleurs, pour des contextes qui ne sont pas les nôtres : connexion permanente supposée, réalités réglementaires différentes, usages éloignés du terrain.",
-    "Chez Shifatek, chaque produit naît d'un problème observé directement au Sénégal — dans une pharmacie, une faculté de médecine, une entreprise — et se construit avec les personnes concernées. C'est ce qui rend nos outils réellement utiles, et adoptés.",
+    "Chez Shifatek, chaque produit naît d'un problème observé directement au Sénégal — dans une pharmacie, une faculté de médecine, une entreprise privée, une organisation sanitaire (ministère, ONG…) — et se construit avec les personnes concernées. C'est ce qui rend nos outils réellement utiles, et adoptés.",
   ],
 } as const
 
