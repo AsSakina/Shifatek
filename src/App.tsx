@@ -9,6 +9,7 @@ import { Hero } from './components/Hero'
 import { Mission } from './components/Mission'
 import { ProductPage, productTitle } from './components/ProductPage'
 import { Products } from './components/Products'
+import { Research } from './components/Research'
 import { Values } from './components/Values'
 
 /** Routage minimal sur le chemin : /aphia, /ilmia, sinon l'accueil. */
@@ -25,7 +26,8 @@ function Home() {
       <Products />
       <Capabilities features={productPages.aphia.features} index={3} />
       <Values />
-      <Contact index={5} />
+      <Research />
+      <Contact index={6} />
     </main>
   )
 }

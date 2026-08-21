@@ -5,6 +5,7 @@ export const nav = [
   { label: 'Mission', href: '/#mission' },
   { label: 'APHIA Care', href: '/aphia' },
   { label: 'Ilmia', href: '/ilmia' },
+  { label: 'Recherche', href: '/#recherche' },
 ] as const
 
 export const navCta = 'Nous contacter'
@@ -171,6 +172,32 @@ export const footer = {
   contactLink: 'Contact',
   legal: '© 2026 Shifatek — Dakar, Sénégal. Tous droits réservés.',
 } as const
+
+/** Recherche appliquée portée par les fondateurs, au-delà des produits. */
+export const researchIntro = {
+  eyebrow: 'Recherche',
+  title: 'Approfondir, au-delà des produits.',
+  text: 'Shifatek élargit son ambition vers la recherche appliquée. Deux axes portés par ses fondateurs, ancrés dans les réalités du terrain sénégalais.',
+} as const
+
+export const research = [
+  {
+    id: 'tb-cxr',
+    tag: 'Candidature Master · NAIST, Japon',
+    title: 'Analyse assistée par IA de radiographies thoraciques pour le triage de la tuberculose',
+    text: 'Le Sénégal recense environ 132 cas de tuberculose pour 100 000 habitants. La radiographie thoracique reste le seul examen d’imagerie couramment accessible pour le dépistage, mais les modèles d’IA existants, entraînés sur des données non africaines, perdent en fiabilité dans ce contexte. Ce projet explore des méthodes d’apprentissage profond légères pour détecter les anomalies pulmonaires évocatrices de tuberculose sur des radiographies de qualité variable.',
+    author: 'Yaye Soukeye Faye',
+    role: 'Cofondatrice de Shifatek',
+  },
+  {
+    id: 'gyfawo',
+    tag: 'Projet de thèse · Management de la santé',
+    title: 'GYFAWO — Assistance gynécologique par IA et télémédecine',
+    text: 'Dans les zones reculées du Sénégal, 68 % des spécialistes sont concentrés à Dakar. GYFAWO étudie la conception, la validation et le déploiement d’un dispositif combinant un agent IA d’appui clinique et des services de télémédecine, pour renforcer les sages-femmes et infirmiers des postes de santé dans le suivi prénatal.',
+    author: 'Dr Aliou Ndiaye',
+    role: 'Pharmacien, expert en santé numérique',
+  },
+] as const
 
 /** Assistant FAQ (bulle de chat) — réponses prédéfinies, aucune IA générative. */
 export const chatbot = {

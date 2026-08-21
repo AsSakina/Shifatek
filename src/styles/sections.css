@@ -189,6 +189,33 @@
   }
 }
 
+/* ---------- Recherche : deux projets portés par les fondateurs ---------- */
+.research-head { max-width: 56ch; margin-bottom: clamp(40px, 5vw, 64px); }
+.research-head p { margin-top: var(--sp-md); }
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-lg);
+  align-items: stretch;
+}
+
+.research-card { padding: clamp(24px, 2.6vw, 34px); }
+.research-card h3 { margin: var(--sp-md) 0 var(--sp-sm); }
+.research-card p { font-size: var(--fs-body-md); }
+
+.research-byline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--sp-lg);
+  padding-top: var(--sp-md);
+  border-top: 1px solid var(--hairline);
+}
+
+.research-byline strong { color: var(--ink-strong); font-size: var(--fs-body-sm); font-weight: 700; }
+.research-byline span { color: var(--ink-muted); font-size: var(--fs-label); }
+
 /* ---------- Contact : bandeau coral pleine largeur ---------- */
 .contact-section {
   background: var(--contact-bg);
@@ -354,7 +381,8 @@
 @media (max-width: 860px) {
   .split,
   .contact-grid,
-  .product-grid { grid-template-columns: 1fr; }
+  .product-grid,
+  .research-grid { grid-template-columns: 1fr; }
 
   .split .visual { order: -1; aspect-ratio: 16 / 10; }
   .product-preview { height: 220px; }
