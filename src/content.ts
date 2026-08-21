@@ -15,7 +15,7 @@ export const hero = {
   titleBefore: 'La technologie de santé, pensée ',
   titleEm: 'depuis le terrain',
   titleAfter: '.',
-  text: "Shifatek conçoit des outils de santé digitale et des solutions innovantes pour l'Afrique de l'Ouest — en partant des besoins réels des pharmacies, des soignants, des étudiants, des entreprises privées et des organisations sanitaires (ministère, ONG…), plutôt que de solutions importées.",
+  text: "Shifatek conçoit des outils de santé digitale et des solutions innovantes pour l'Afrique de l'Ouest, en partant des besoins réels des pharmacies, des soignants, des étudiants, des entreprises privées et des organisations sanitaires (ministère, ONG…), plutôt que de solutions importées.",
   primaryCta: 'Découvrir notre mission',
   secondaryCta: 'Nous contacter',
 } as const
@@ -25,7 +25,7 @@ export const mission = {
   title: 'Partir des besoins réels, pas importer des solutions toutes faites.',
   paragraphs: [
     "Trop d'outils numériques de santé sont pensés ailleurs, pour des contextes qui ne sont pas les nôtres : connexion permanente supposée, réalités réglementaires différentes, usages éloignés du terrain.",
-    "Chez Shifatek, chaque produit naît d'un problème observé directement au Sénégal — dans une pharmacie, une faculté de médecine, une entreprise privée, une organisation sanitaire (ministère, ONG…) — et se construit avec les personnes concernées. C'est ce qui rend nos outils réellement utiles, et adoptés.",
+    "Chez Shifatek, chaque produit naît d'un problème observé directement au Sénégal : dans une pharmacie, une faculté de médecine, une entreprise privée, une organisation sanitaire (ministère, ONG…). Il se construit avec les personnes concernées, ce qui rend nos outils réellement utiles, et adoptés.",
   ],
 } as const
 
@@ -58,7 +58,7 @@ export const about = {
   eyebrow: "L'équipe",
   title: 'Une équipe entre la tech, la santé et le terrain sénégalais.',
   paragraphs: [
-    "Basée à Dakar, Shifatek réunit une expertise technique solide — data science, développement, IA — et une connaissance fine des réalités de la santé en Afrique de l'Ouest.",
+    "Basée à Dakar, Shifatek réunit une expertise technique solide (data science, développement, IA) et une connaissance fine des réalités de la santé en Afrique de l'Ouest.",
     'Nous construisons avec une exigence : chaque outil doit fonctionner dans le monde réel, pas seulement en démonstration.',
   ],
 } as const
@@ -133,7 +133,7 @@ export const productPages = {
     name: 'Formations',
     kicker: 'Formation data & IA',
     title: 'Apprendre la donnée et l’IA, sans jargon.',
-    intro: 'Shifatek forme équipes, dirigeants et particuliers aux fondamentaux de la donnée et de l’intelligence artificielle — des sessions concrètes, pensées pour des débutants, ancrées dans des cas réels plutôt que dans la théorie.',
+    intro: 'Shifatek forme équipes, dirigeants et particuliers aux fondamentaux de la donnée et de l’intelligence artificielle : des sessions concrètes, pensées pour des débutants, ancrées dans des cas réels plutôt que dans la théorie.',
     accent: 'mint',
     cta: 'Réserver une session',
     ctaHref: '/#contact',
@@ -187,14 +187,14 @@ export const messageField = { id: 'message', label: 'Message' } as const
 
 export const footer = {
   contactLink: 'Contact',
-  legal: '© 2026 Shifatek — Dakar, Sénégal. Tous droits réservés.',
+  legal: '© 2026 Shifatek, Dakar, Sénégal. Tous droits réservés.',
 } as const
 
 /** Recherche appliquée : une ambition d'entreprise, au-delà des produits. */
 export const researchIntro = {
   eyebrow: 'Recherche',
   title: 'La santé mérite une recherche exigeante.',
-  text: 'Shifatek considère la santé comme un domaine qui exige rigueur scientifique et recherche continue — pas seulement des produits. C’est une ambition de long terme, portée dès aujourd’hui à travers deux axes explorés par notre équipe.',
+  text: 'Shifatek considère la santé comme un domaine qui exige rigueur scientifique et recherche continue, pas seulement des produits. C’est une ambition de long terme, portée dès aujourd’hui à travers deux axes explorés par notre équipe.',
 } as const
 
 export const research = [
@@ -207,7 +207,7 @@ export const research = [
   {
     id: 'gyfawo',
     tag: 'IA clinique & télémédecine',
-    title: 'GYFAWO — Assistance gynécologique par IA et télémédecine',
+    title: 'GYFAWO : assistance gynécologique par IA et télémédecine',
     text: 'Dans les zones reculées du Sénégal, 68 % des spécialistes sont concentrés à Dakar. GYFAWO explore un dispositif combinant un agent IA d’appui clinique et des services de télémédecine, pour renforcer les sages-femmes et infirmiers des postes de santé dans le suivi prénatal.',
   },
 ] as const
@@ -225,7 +225,7 @@ export const chatTopics = [
   {
     id: 'mission',
     question: 'Quelle est votre mission ?',
-    answer: 'Nous partons des besoins réels observés sur le terrain — pharmacies, soignants, étudiants, entreprises, organisations sanitaires — plutôt que d’importer des solutions toutes faites.',
+    answer: 'Nous partons des besoins réels observés sur le terrain (pharmacies, soignants, étudiants, entreprises, organisations sanitaires) plutôt que d’importer des solutions toutes faites.',
     link: { label: 'En savoir plus', href: '/#mission' },
   },
   {
@@ -243,13 +243,13 @@ export const chatTopics = [
   {
     id: 'formations',
     question: 'Proposez-vous des formations ?',
-    answer: 'Oui : des sessions data et IA pour équipes, dirigeants et particuliers — concrètes, pensées pour des débutants, ancrées dans des cas réels.',
+    answer: 'Oui : des sessions data et IA pour équipes, dirigeants et particuliers. Concrètes, pensées pour des débutants, ancrées dans des cas réels.',
     link: { label: 'Découvrir les formations', href: '/formations' },
   },
   {
     id: 'contact',
     question: 'Comment vous contacter ?',
-    answer: 'Le plus simple est d’utiliser le formulaire de contact, ou de nous écrire directement à contact@shifatek.com — nous répondons rapidement.',
+    answer: 'Le plus simple est d’utiliser le formulaire de contact, ou de nous écrire directement à contact@shifatek.com. Nous répondons rapidement.',
     link: { label: 'Ouvrir le formulaire', href: '/#contact' },
   },
   {
