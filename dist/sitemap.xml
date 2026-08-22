@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.shifatek.com/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.shifatek.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shifatek.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shifatek.com/" />
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.shifatek.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.shifatek.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shifatek.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shifatek.com/" />
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.shifatek.com/aphia</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.shifatek.com/aphia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shifatek.com/en/aphia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shifatek.com/aphia" />
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.shifatek.com/en/aphia</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.shifatek.com/aphia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shifatek.com/en/aphia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shifatek.com/aphia" />
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.shifatek.com/ilmia</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.shifatek.com/ilmia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shifatek.com/en/ilmia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shifatek.com/ilmia" />
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.shifatek.com/en/ilmia</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.shifatek.com/ilmia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shifatek.com/en/ilmia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shifatek.com/ilmia" />
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.shifatek.com/formations</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.shifatek.com/formations" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shifatek.com/en/formations" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shifatek.com/formations" />
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.shifatek.com/en/formations</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.shifatek.com/formations" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.shifatek.com/en/formations" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shifatek.com/formations" />
+    <priority>0.8</priority>
+  </url>
+</urlset>

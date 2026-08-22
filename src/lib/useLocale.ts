@@ -1,32 +1,22 @@
 import { useCallback, useState } from 'react'
 import type { Locale } from '../content'
+import { localizedPath, parseLocation } from './routing'
 
-const KEY = 'shifatek-locale'
-
-function initial(): Locale {
-  try {
-    const stored = localStorage.getItem(KEY)
-    if (stored === 'fr' || stored === 'en') return stored
-  } catch {
-    // stockage indisponible (navigation privée) : on retombe sur la langue du navigateur
-  }
-  return typeof navigator !== 'undefined' && navigator.language.toLowerCase().startsWith('en') ? 'en' : 'fr'
-}
-
-/** Langue du site (fr/en), persistée comme le thème. Pas de préfixe d'URL. */
+/**
+ * Langue du site : dérivée de l'URL (/en préfixé), pas d'un état ou d'une
+ * préférence mémorisée. Une redirection basée sur le navigateur ferait
+ * qu'une même URL affiche un contenu différent selon le visiteur — Google
+ * déconseille ça, et ça empêche d'indexer correctement les deux langues.
+ */
 export function useLocale() {
-  const [locale, setLocale] = useState<Locale>(() => (typeof window === 'undefined' ? 'fr' : initial()))
+  const [locale] = useState<Locale>(() =>
+    typeof window === 'undefined' ? 'fr' : parseLocation(window.location.pathname).locale
+  )
 
   const toggle = useCallback(() => {
-    setLocale((previous) => {
-      const next: Locale = previous === 'fr' ? 'en' : 'fr'
-      try {
-        localStorage.setItem(KEY, next)
-      } catch {
-        // stockage indisponible : le choix reste en mémoire pour la session
-      }
-      return next
-    })
+    const { locale: current, rest } = parseLocation(window.location.pathname)
+    const next: Locale = current === 'fr' ? 'en' : 'fr'
+    window.location.href = localizedPath(next, rest) + window.location.hash
   }, [])
 
   return { locale, toggle }

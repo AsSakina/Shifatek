@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { useContent } from '../lib/ContentContext'
+import { useLocaleSwitch, useContent } from '../lib/ContentContext'
 import { useActiveSection } from '../lib/useActiveSection'
 import { useScrollProgress } from '../lib/useScrollProgress'
+import { localizedPath } from '../lib/routing'
 import { LocaleToggle } from './LocaleToggle'
 import { ThemeToggle } from './ThemeToggle'
 
@@ -10,15 +11,20 @@ const SECTION_IDS = ['mission', 'produits', 'apropos', 'recherche', 'contact'] a
 
 export function Header() {
   const { nav, navCta, ui } = useContent()
+  const { locale } = useLocaleSwitch()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const headerRef = useScrollProgress<HTMLElement>()
   const active = useActiveSection(SECTION_IDS)
   const path = typeof window === 'undefined' ? '/' : window.location.pathname.replace(/\/$/, '') || '/'
+  const homePath = localizedPath(locale, '/')
 
-  /** Actif : la page produit courante, ou la section visible sur l'accueil. */
-  const isActive = (href: string) =>
-    href.startsWith('/#') ? path === '/' && active === href.slice(2) : href === path
+  /** Actif : la page produit courante, ou la section visible sur l'accueil (préfixe /en compris). */
+  const isActive = (href: string) => {
+    const hashIndex = href.indexOf('#')
+    if (hashIndex === -1) return href === path
+    return path === href.slice(0, hashIndex) && active === href.slice(hashIndex + 1)
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
@@ -30,7 +36,7 @@ export function Header() {
   return (
     <header ref={headerRef} className={`site-header ${scrolled ? 'scrolled' : ''}`.trim()}>
       <div className="wrap nav">
-        <a href={path === '/' ? '#top' : '/'} className="logo">
+        <a href={path === homePath ? '#top' : homePath} className="logo">
           <img className="logo-img light" src="/logo-light.png" alt="Shifatek" width={555} height={120} />
           <img className="logo-img dark" src="/logo-dark.png" alt="" aria-hidden="true" width={555} height={120} />
         </a>

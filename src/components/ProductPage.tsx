@@ -1,13 +1,15 @@
 import { ArrowLeft, ArrowRight, Activity } from 'lucide-react'
 import type { Content, ProductId } from '../content'
-import { useContent } from '../lib/ContentContext'
+import { useLocaleSwitch, useContent } from '../lib/ContentContext'
+import { localizedPath } from '../lib/routing'
 import { Capabilities } from './Capabilities'
 import { Contact } from './Contact'
 import { Roadmap } from './Roadmap'
 
-/** Page produit : /aphia, /ilmia, /formations. La feuille de route est propre à APHIA. */
+/** Page produit : /aphia, /ilmia, /formations (ou /en/…). La feuille de route est propre à APHIA. */
 export function ProductPage({ id }: { id: ProductId }) {
   const { productPages, productNav, productContact } = useContent()
+  const { locale } = useLocaleSwitch()
   const data = productPages[id]
   const hasRoadmap = id === 'aphia'
 
@@ -20,7 +22,7 @@ export function ProductPage({ id }: { id: ProductId }) {
         </div>
         <div className="wrap">
           <div className="product-hero-inner">
-            <a className="back-link" href="/">
+            <a className="back-link" href={localizedPath(locale, '/')}>
               <ArrowLeft aria-hidden="true" />
               {productNav.back}
             </a>

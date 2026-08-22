@@ -11,6 +11,7 @@
 
 .site-header.scrolled {
   background: color-mix(in srgb, var(--surface) 82%, transparent);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom-color: var(--border);
   box-shadow: 0 4px 18px rgba(34, 46, 80, 0.05);

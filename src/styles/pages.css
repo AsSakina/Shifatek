@@ -143,6 +143,7 @@
   border-top: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
   background: color-mix(in srgb, var(--surface) 88%, transparent);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
